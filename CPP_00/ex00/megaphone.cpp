@@ -6,7 +6,7 @@
 /*   By: mal-guna <mal-guna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 09:30:31 by mal-guna          #+#    #+#             */
-/*   Updated: 2022/03/03 09:30:33 by mal-guna         ###   ########.fr       */
+/*   Updated: 2022/03/03 09:39:34 by mal-guna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int main(int ac, char **argv)
 			}
 			i++;
 		}
-		std::cout << "\n";
+		std::cout << std::endl;
 	}
 	return (0);
 }

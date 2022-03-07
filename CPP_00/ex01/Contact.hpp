@@ -6,13 +6,14 @@
 /*   By: mal-guna <mal-guna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 09:28:40 by mal-guna          #+#    #+#             */
-/*   Updated: 2022/03/05 04:03:31 by mal-guna         ###   ########.fr       */
+/*   Updated: 2022/03/07 06:47:20 by mal-guna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_HPP
 #define CONTACT_HPP
 #include <string>
+#include <iomanip>
 #include <stdlib.h>
 #include <iostream>
 

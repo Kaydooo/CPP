@@ -6,7 +6,7 @@
 /*   By: mal-guna <mal-guna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 09:28:37 by mal-guna          #+#    #+#             */
-/*   Updated: 2022/03/05 04:03:27 by mal-guna         ###   ########.fr       */
+/*   Updated: 2022/03/07 08:52:13 by mal-guna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,51 +41,23 @@ void	Contact::print_contact(void) const
 
 void	Contact::print_as_row(void) const
 {
-	std::cout << "|         " << this->index;
+	std::cout << "|" << std::setw(10) << this->index;
 	int size = this->firstname.size();
-	if (size <=10)
-	{	
-		std::cout << "|";
-		this->print_spaces(10-size);
-		std::cout << this->firstname;
-	}
+	if(size > 10)
+		std::cout << "|" << std::setw(9) << firstname.substr(0,9) << ".";
 	else
-	{
-		std::cout << "|";
-		for(int i = 0; i < 9; i++)
-			std::cout << firstname[i];
-		std::cout << ".";
-	}
+		std::cout << "|" << std::setw(10) << firstname;
 	size = this->lastname.size();
-	if (size <=10)
-	{	
-		std::cout << "|";
-		this->print_spaces(10-size);
-		std::cout << this->lastname;
-	}
+	if(size > 10)
+		std::cout << "|" << std::setw(9) << lastname.substr(0,9) << ".";
 	else
-	{
-		std::cout << "|";
-		for(int i = 0; i < 9; i++)
-			std::cout << lastname[i];
-		std::cout << ".";
-	}
+		std::cout << "|" << std::setw(10) << lastname;
 	size = this->nickname.size();
-	if (size <= 10)
-	{	
-		std::cout << "|";
-		this->print_spaces(10-size);
-		std::cout << this->nickname;
-		std::cout << "|";
-	}
+	if(size > 10)
+		std::cout << "|" << std::setw(9) << nickname.substr(0,9) << ".";
 	else
-	{
-		std::cout << "|";
-		for(int i = 0; i < 9; i++)
-			std::cout << nickname[i];
-		std::cout << ".|";
-	}
-	std::cout << std::endl;
+		std::cout << "|" << std::setw(10) << nickname;
+	std::cout << "|" << std::endl;
 }
 
 void	Contact::print_spaces(int n) const

@@ -3,7 +3,7 @@
 # $@ "include target"
 # $^ "include the full list of prerequisites)"
 
-SRCS = main.cpp PhoneBook.cpp Contact.cpp
+SRCS = tests.cpp Account.cpp 
 
 OBJS = ${SRCS:.cpp=.o}
 
@@ -11,12 +11,12 @@ CXX = g++
 
 CXXFLAGS = -Werror -Wall -Wextra -g3 -std=c++98
 
-NAME = contactbook
+NAME = tests
 	
 all : $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(CXXFLAGS) $(OBJS) -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 clean:
 	rm -rf $(OBJS)

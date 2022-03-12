@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Account.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mal-guna <mal-guna@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mal-guna <m3t9mm@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 09:28:52 by mal-guna          #+#    #+#             */
-/*   Updated: 2022/03/03 09:28:53 by mal-guna         ###   ########.fr       */
+/*   Updated: 2022/03/10 14:07:42 by mal-guna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ void	Account::displayAccountsInfos()
 {
 	std::cout << "[19920104_091532] " << "accounts:" << getNbAccounts() << ";total:" << \
 	getTotalAmount() << ";deposits:" << getNbDeposits() << ";withdrawals:" << \
-	getNbWithdrawals << std::endl;
+	getNbWithdrawals() << std::endl;
 }
 
 

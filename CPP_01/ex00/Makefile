@@ -3,15 +3,15 @@
 # $@ "include target"
 # $^ "include the full list of prerequisites)"
 
-SRCS = main.cpp PhoneBook.cpp Contact.cpp
+SRCS = Zombie.cpp main.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
-CXX = g++
+CC = g++
 
-CXXFLAGS = -Werror -Wall -Wextra -g3 -std=c++98
+CXXFLAGS = -Werror -Wall -Wextra -std=c++98
 
-NAME = contactbook
+NAME = BraiiiiiiinnnzzzZ
 	
 all : $(NAME)
 
@@ -20,7 +20,6 @@ $(NAME): $(OBJS)
 
 clean:
 	rm -rf $(OBJS)
-	
 fclean: clean
 	rm -rf $(NAME)
 	

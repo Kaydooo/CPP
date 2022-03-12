@@ -7,7 +7,7 @@ SRCS = megaphone.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
-CC = g++
+CXX = g++
 
 CXXFLAGS = -Werror -Wall -Wextra -std=c++98
 

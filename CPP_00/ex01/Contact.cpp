@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mal-guna <mal-guna@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mal-guna <m3t9mm@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 09:28:37 by mal-guna          #+#    #+#             */
-/*   Updated: 2022/03/07 08:52:13 by mal-guna         ###   ########.fr       */
+/*   Updated: 2022/03/12 20:13:51 by mal-guna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,10 +58,4 @@ void	Contact::print_as_row(void) const
 	else
 		std::cout << "|" << std::setw(10) << nickname;
 	std::cout << "|" << std::endl;
-}
-
-void	Contact::print_spaces(int n) const
-{
-	for(int i = 0; i < n; i++)
-		std::cout << " ";
 }

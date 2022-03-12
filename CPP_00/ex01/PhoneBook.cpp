@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mal-guna <mal-guna@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mal-guna <m3t9mm@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 09:28:46 by mal-guna          #+#    #+#             */
-/*   Updated: 2022/03/03 09:28:47 by mal-guna         ###   ########.fr       */
+/*   Updated: 2022/03/12 21:31:19 by mal-guna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@
 	}
 	void	PhoneBook::new_contact(std::string *info)
 	{
-		this->Contacts[_index].set_info(info);
-		this->Contacts[_index].index = this->_index;
+		this->Contacts[this->_index].set_info(info);
+		this->Contacts[this->_index].index = this->_index;
 		this->_index++;
 		if(this->_total < 8)
 			this->_total++;
@@ -46,5 +46,5 @@
 		if(index < this->_total && index >= 0)
 			this->Contacts[index].print_contact();
 		else
-			std::cout << "You Picked an Invalid Index" << std::endl;
+			std::cout << "Index Out Of Range !!" << std::endl;
 	}

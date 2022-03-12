@@ -6,12 +6,13 @@
 /*   By: mal-guna <m3t9mm@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 09:28:52 by mal-guna          #+#    #+#             */
-/*   Updated: 2022/03/10 14:07:42 by mal-guna         ###   ########.fr       */
+/*   Updated: 2022/03/12 21:16:37 by mal-guna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Account.hpp"
 #include <iostream>
+#include <ctime>
 
 Account::Account(int initial_deposit)
 {
@@ -22,7 +23,8 @@ Account::Account(int initial_deposit)
 	this->_nbWithdrawals = 0;
 	Account::_totalAmount += initial_deposit;
 	this->_amount += initial_deposit;
-	std::cout << "[19920104_091532] " << "index:" <<\
+	this->_displayTimestamp();
+	std::cout << "index:" <<\
 	this->_accountIndex << ";amount:" << this->_amount << ";created" << std::endl;
 	return ;
 }
@@ -30,14 +32,24 @@ Account::Account(int initial_deposit)
 Account::~Account(void)
 {
 	Account::_nbAccounts -= 1;
-	std::cout << "[19920104_091532] " << "index:" <<\
+	_displayTimestamp();
+	std::cout << "index:" <<\
 	this->_accountIndex << ";amount:" << this->_amount << ";closed" << std::endl;
 	return ;
+}
+void	Account::_displayTimestamp( void )
+{
+	std::time_t t = std::time(nullptr);
+    char mbstr[100];
+	    if (std::strftime(mbstr, sizeof(mbstr), "[%Y%m%d_%H%M%S] ", std::localtime(&t))) {
+        std::cout << mbstr;
+		}
 }
 
 void	Account::makeDeposit( int deposit )
 {
-	std::cout << "[19920104_091532] " << "index:" << this->_accountIndex << ";p_amount:" << this->_amount;
+	_displayTimestamp();
+	std::cout <<"index:" << this->_accountIndex << ";p_amount:" << this->_amount;
 	Account::_totalAmount += deposit;
 	this->_amount += deposit;
 	Account::_totalNbDeposits += 1;
@@ -48,7 +60,8 @@ void	Account::makeDeposit( int deposit )
 
 bool	Account::makeWithdrawal( int withdrawal )
 {
-	std::cout << "[19920104_091532] " << "index:" << this->_accountIndex << ";p_amount:" << this->_amount;
+	_displayTimestamp();
+	std::cout << "index:" << this->_accountIndex << ";p_amount:" << this->_amount;
 	if (withdrawal <= this->_amount)
 	{
 		Account::_totalAmount -= withdrawal;

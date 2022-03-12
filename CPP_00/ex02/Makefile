@@ -7,7 +7,7 @@ SRCS = tests.cpp Account.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
-CXX = g++
+CXX = c++
 
 CXXFLAGS = -Werror -Wall -Wextra -g3 -std=c++98
 

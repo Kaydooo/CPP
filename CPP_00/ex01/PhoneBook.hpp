@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mal-guna <mal-guna@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mal-guna <m3t9mm@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 09:28:49 by mal-guna          #+#    #+#             */
-/*   Updated: 2022/03/03 09:28:50 by mal-guna         ###   ########.fr       */
+/*   Updated: 2022/03/12 21:31:49 by mal-guna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ private:
 	Contact Contacts[8];
 	int _total;
 	int _index;
-
 };
 
 #endif

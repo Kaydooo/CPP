@@ -7,7 +7,7 @@ SRCS = main.cpp PhoneBook.cpp Contact.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
-CXX = g++
+CXX = c++
 
 CXXFLAGS = -Werror -Wall -Wextra -g3 -std=c++98
 
@@ -16,7 +16,7 @@ NAME = contactbook
 all : $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(CXXFLAGS) $(OBJS) -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 clean:
 	rm -rf $(OBJS)

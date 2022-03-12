@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mal-guna <mal-guna@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mal-guna <m3t9mm@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 09:28:40 by mal-guna          #+#    #+#             */
-/*   Updated: 2022/03/07 06:47:20 by mal-guna         ###   ########.fr       */
+/*   Updated: 2022/03/12 20:43:43 by mal-guna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include <iomanip>
 #include <stdlib.h>
 #include <iostream>
-
 class Contact
 {
 
@@ -27,7 +26,6 @@ public:
 	void	set_info(std::string info[5]);
 	void	print_as_row(void) const;
 	void	print_contact(void) const;
-	void	print_spaces(int n) const;
 
 private:
 	std::string firstname;

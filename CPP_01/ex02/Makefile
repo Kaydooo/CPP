@@ -3,7 +3,7 @@
 # $@ "include target"
 # $^ "include the full list of prerequisites)"
 
-SRCS = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
+SRCS = main.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
@@ -11,7 +11,7 @@ CXX = c++
 
 CXXFLAGS = -Werror -Wall -Wextra -std=c++98
 
-NAME = BraiiiiiiinnnzzzZ
+NAME = thisIsBrain
 	
 all : $(NAME)
 

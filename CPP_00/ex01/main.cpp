@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mal-guna <m3t9mm@gmail.com>                +#+  +:+       +#+        */
+/*   By: mal-guna <mal-guna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 09:28:43 by mal-guna          #+#    #+#             */
-/*   Updated: 2022/03/12 22:06:05 by mal-guna         ###   ########.fr       */
+/*   Updated: 2022/03/13 01:50:17 by mal-guna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,14 @@ int	search(PhoneBook *phonebook)
 		std::cout << "Ctrl D detected, Exiting the program ...." << std::endl;
 		return 1;
 	}
-	if(input.size() == 0)
+	if(input.size() == 0 || input.size() > 1)
 	{
 		std::cout << "Wrong Index !!" << std::endl;
 		return 0;
 	}
 	for(int j = 0; j < (int)input.size() ;j++)
 	{
-		if(!isnumber(input[j]))
+		if(!isdigit(input[j]))
 		{	std::cout << "Wrong Index !!" << std::endl;
 			return 0;	
 		}

@@ -1,15 +1,15 @@
 #include "Harl.hpp"
 
-void prnNext(std::string errorMsg)
+int prnNext(std::string errorMsg)
 {
 	std::cout << errorMsg << std::endl;
-	exit(0);
+	return (0);
 }
 
 int main(int argc, char **argv)
 {
 	if (argc != 2)
-		prnNext("Wrong Number of Args");
+		return (prnNext("Wrong Number of Args"));
 	Harl hObject;
 	std::string levels[4] = {"debug", "info", "warning", "error"};
 	for (int i = 0 ; i < 4; i++)

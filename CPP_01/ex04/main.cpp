@@ -9,7 +9,7 @@ std::string parsefile(std::string filename, std::string s1, std::string s2)
 	std::ifstream infile;
 	std::string line;
 	std::string content;
-	infile.open(filename);
+	infile.open(filename.c_str());
 
 	if(infile)
 	{
@@ -25,31 +25,35 @@ std::string parsefile(std::string filename, std::string s1, std::string s2)
 			content.insert(index, s2);
 		}
 	}
+	infile.close();
 	return (content);
 }
 
 void	printToFile(std::string filename, std::string content)
 {
-	std::ofstream outfile;
-	outfile.open(filename += ".replace");
+	std::ofstream outfile((filename += ".replace").c_str());
+	//outfile.open(filename += ".replace");
+	//std::ofstream   outfile(std::string(filename));
+	//outfile.open(filename += ".replace");
 	outfile << content;
+	outfile.close();
 }
 
-void prnNext(std::string errorMsg)
+int  prnNext(std::string errorMsg)
 {
 	std::cout << errorMsg << std::endl;
-	exit(0);
+	return(0);
 }
 
 int main(int argc, char **argv)
 {
 	if(argc != 4)
-		prnNext("Wrong Number Of Args !!");
+		return(prnNext("Wrong Number Of Args !!"));
 	std::string filename(argv[1]);
 	std::string s1(argv[2]);
 	std::string s2(argv[3]);
 	if(!s1.size() || !s2.size())
-		prnNext("Wrong Args !!");
+		return(prnNext("Wrong Args !!"));
 	std::string content = parsefile(filename, s1, s2);
 	printToFile(filename, content);
 	return (0);

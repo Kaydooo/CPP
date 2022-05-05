@@ -1,19 +1,14 @@
 
 #include "ScavTrap.hpp"
 
-	ScavTrap::ScavTrap(void)
+	ScavTrap::ScavTrap(void):ClapTrap("Default Scav", 100, 50, 30)
 	{
-		std::cout << "Default Constrcuter Called _ SS" << std::endl;
-
-		name = "Default";
-		hitpoints = 100;
-		energypoints = 50;
-		attackdamage = 20;
+		std::cout << "ScavTrap Default Constrcuter Called _ SS" << std::endl;
 	}
 
 	ScavTrap::ScavTrap(std::string str){
 
-		std::cout << "Constrcuter Called __ SS" << std::endl;
+		std::cout << "ScavTrap Constrcuter Called __ SS" << std::endl;
 
 		name = str;
 		hitpoints = 100;
@@ -23,7 +18,7 @@
 
 	ScavTrap::~ScavTrap(void)
 	{
-		std::cout << "Destructor Called _ SS" << std::endl;
+		std::cout << "ScavTrap Destructor Called _ SS" << std::endl;
 
 	}
 

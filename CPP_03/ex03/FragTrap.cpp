@@ -1,19 +1,14 @@
 
 #include "FragTrap.hpp"
 
-	FragTrap::FragTrap(void)
+	FragTrap::FragTrap(void) : ClapTrap("Default Frag", 100, 100, 30)
 	{
-		std::cout << "Default Constrcuter Called _ FF" << std::endl;
-
-		name = "Default";
-		hitpoints = 100;
-		energypoints = 100;
-		attackdamage = 30;
+		std::cout << "Frag Trap Default Constrcuter Called _ FF" << std::endl;
 	}
 
 	FragTrap::FragTrap(std::string str){
 
-		std::cout << "Constrcuter Called __ FF" << std::endl;
+		std::cout << "Frag Trap Constrcuter Called __ FF" << std::endl;
 
 		name = str;
 		hitpoints = 100;
@@ -23,11 +18,11 @@
 
 	FragTrap::~FragTrap(void)
 	{
-		std::cout << "Destructor Called _ FF" << std::endl;
+		std::cout << "Frag Trap Destructor Called _ FF" << std::endl;
 
 	}
 
 	void	FragTrap::highFivesGuys()
 	{
-		std::cout << name << "Gimme A HIGHHH FIVE !!!!!" << std::endl;
+		std::cout << name << "Frag Trap Gimme A HIGHHH FIVE !!!!!" << std::endl;
 	}

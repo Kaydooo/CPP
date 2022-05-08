@@ -1,23 +1,23 @@
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 
 # include <iostream>
 
-class Animal
+class WrongAnimal
 {
 public:
 	
 
 // ----------------------------- Constructors ------------------------------ //
-	Animal();	// Default Constructor
-	Animal(std::string in_Type);	// Fields Constructor
-	Animal(const Animal& c);	// Copy Constructor
+	WrongAnimal();	// Default Constructor
+	WrongAnimal(std::string in_Type);	// Fields Constructor
+	WrongAnimal(const WrongAnimal& c);	// Copy Constructor
 
 // ------------------------------ Destructor ------------------------------- //
-	virtual ~Animal();	// Destructor
+	~WrongAnimal();	// Destructor
 
 // ------------------------------- Operators ------------------------------- //
-	Animal & operator=(const Animal& a);
+	WrongAnimal & operator=(const WrongAnimal& a);
 	// Copy Assignement Operator
 
 // --------------------------- Getters && Setters -------------------------- //
@@ -27,7 +27,7 @@ public:
 
 // --------------------------------- Methods ------------------------------- //
 
-	virtual void	makeSound() const;
+	void	makeSound() const;
 protected:
 	std::string Type;
 
@@ -39,19 +39,19 @@ protected:
 #   define _ARG(arg) #arg << "(" << arg << ") "
 #  endif /* _ARG */
 
-#  define _ANIMAL_ARGS _ARG(Type)
-#  define _ANIMAL_AUTO(COLOR_CODE, TEXT) \
+#  define _WRONGANIMAL_ARGS _ARG(Type)
+#  define _WRONGANIMAL_AUTO(COLOR_CODE, TEXT) \
 	std::cout << "{ \e[" << COLOR_CODE << ";1m"                 \
 			  << TEXT << " " << __PRETTY_FUNCTION__ << "\e[0m " \
 			  << "[\033[34;47m" << this                         \
-			  << "\033[0m]\033[0m: " << _ANIMAL_ARGS  \
+			  << "\033[0m]\033[0m: " << _WRONGANIMAL_ARGS  \
 			  << "}" << std::endl;
 # else
 
-#  define _ANIMAL_AUTO(x, y) ;
-#  define _ANIMAL_ARGS ""
+#  define _WRONGANIMAL_AUTO(x, y) ;
+#  define _WRONGANIMAL_ARGS ""
 #  define _ARG ""
 
 # endif /* NO_DEBUG */
 
-#endif /* ANIMAL_HPP */
+#endif /* WRONGANIMAL_HPP */

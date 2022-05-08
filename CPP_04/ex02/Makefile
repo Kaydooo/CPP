@@ -11,7 +11,7 @@ CXX = c++
 
 CXXFLAGS = -Werror -Wall -Wextra -I./includes -std=c++98
 
-NAME = ex01
+NAME = ex02
 	
 all : $(NAME)
 

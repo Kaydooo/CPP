@@ -1,36 +1,30 @@
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
 # include <iostream>
+#include "WrongAnimal.hpp"
 
-class Animal
+class WrongCat: virtual public WrongAnimal
 {
 public:
-	
 
 // ----------------------------- Constructors ------------------------------ //
-	Animal();	// Default Constructor
-	Animal(std::string in_Type);	// Fields Constructor
-	Animal(const Animal& c);	// Copy Constructor
+	WrongCat();	// Default Constructor
+	WrongCat(std::string in_Type);	// Fields Constructor
+	WrongCat(const WrongCat& c);	// Copy Constructor
 
 // ------------------------------ Destructor ------------------------------- //
-	virtual ~Animal();	// Destructor
+	~WrongCat();	// Destructor
 
 // ------------------------------- Operators ------------------------------- //
-	Animal & operator=(const Animal& a);
+	WrongCat & operator=(const WrongCat& a);
 	// Copy Assignement Operator
 
 // --------------------------- Getters && Setters -------------------------- //
-	std::string get_Type() const;
-	void set_Type(std::string input);
 	
 
 // --------------------------------- Methods ------------------------------- //
-
-	virtual void	makeSound() const;
-protected:
-	std::string Type;
-
+	void	makeSound()const;
 };
 
 # ifndef NO_DEBUG
@@ -39,19 +33,19 @@ protected:
 #   define _ARG(arg) #arg << "(" << arg << ") "
 #  endif /* _ARG */
 
-#  define _ANIMAL_ARGS _ARG(Type)
-#  define _ANIMAL_AUTO(COLOR_CODE, TEXT) \
+#  define _WRONGCAT_ARGS _ARG(Type)
+#  define _WRONGCAT_AUTO(COLOR_CODE, TEXT) \
 	std::cout << "{ \e[" << COLOR_CODE << ";1m"                 \
 			  << TEXT << " " << __PRETTY_FUNCTION__ << "\e[0m " \
 			  << "[\033[34;47m" << this                         \
-			  << "\033[0m]\033[0m: " << _ANIMAL_ARGS  \
+			  << "\033[0m]\033[0m: " << _WRONGCAT_ARGS  \
 			  << "}" << std::endl;
 # else
 
-#  define _ANIMAL_AUTO(x, y) ;
-#  define _ANIMAL_ARGS ""
+#  define _WRONGCAT_AUTO(x, y) ;
+#  define _WRONGCAT_ARGS ""
 #  define _ARG ""
 
 # endif /* NO_DEBUG */
 
-#endif /* ANIMAL_HPP */
+#endif /* WRONGCAT_HPP */

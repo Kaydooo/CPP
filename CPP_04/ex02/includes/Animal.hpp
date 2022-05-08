@@ -14,7 +14,7 @@ public:
 	Animal(const Animal& c);	// Copy Constructor
 
 // ------------------------------ Destructor ------------------------------- //
-	virtual ~Animal();	// Destructor
+	virtual ~Animal() = 0;	// Destructor
 
 // ------------------------------- Operators ------------------------------- //
 	Animal & operator=(const Animal& a);

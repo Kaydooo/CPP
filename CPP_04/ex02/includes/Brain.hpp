@@ -1,35 +1,34 @@
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
 # include <iostream>
 
-class Animal
+class Brain
 {
 public:
 	
 
 // ----------------------------- Constructors ------------------------------ //
-	Animal();	// Default Constructor
-	Animal(std::string in_Type);	// Fields Constructor
-	Animal(const Animal& c);	// Copy Constructor
+	Brain();	// Default Constructor
+	Brain(std::string in_ideas);	// Fields Constructor
+	Brain(const Brain& c);	// Copy Constructor
 
 // ------------------------------ Destructor ------------------------------- //
-	virtual ~Animal();	// Destructor
+	~Brain();	// Destructor
 
 // ------------------------------- Operators ------------------------------- //
-	Animal & operator=(const Animal& a);
+	Brain & operator=(const Brain& a);
 	// Copy Assignement Operator
 
 // --------------------------- Getters && Setters -------------------------- //
-	std::string get_Type() const;
-	void set_Type(std::string input);
+	std::string get_ideas(int index) const;
+	void set_ideas(std::string input, int index);
 	
 
 // --------------------------------- Methods ------------------------------- //
 
-	virtual void	makeSound() const;
-protected:
-	std::string Type;
+private:
+	std::string ideas[100];
 
 };
 
@@ -39,19 +38,19 @@ protected:
 #   define _ARG(arg) #arg << "(" << arg << ") "
 #  endif /* _ARG */
 
-#  define _ANIMAL_ARGS _ARG(Type)
-#  define _ANIMAL_AUTO(COLOR_CODE, TEXT) \
+#  define _BRAIN_ARGS _ARG(ideas)
+#  define _BRAIN_AUTO(COLOR_CODE, TEXT) \
 	std::cout << "{ \e[" << COLOR_CODE << ";1m"                 \
 			  << TEXT << " " << __PRETTY_FUNCTION__ << "\e[0m " \
 			  << "[\033[34;47m" << this                         \
-			  << "\033[0m]\033[0m: " << _ANIMAL_ARGS  \
+			  << "\033[0m]\033[0m: " << _BRAIN_ARGS  \
 			  << "}" << std::endl;
 # else
 
-#  define _ANIMAL_AUTO(x, y) ;
-#  define _ANIMAL_ARGS ""
+#  define _BRAIN_AUTO(x, y) ;
+#  define _BRAIN_ARGS ""
 #  define _ARG ""
 
 # endif /* NO_DEBUG */
 
-#endif /* ANIMAL_HPP */
+#endif /* BRAIN_HPP */

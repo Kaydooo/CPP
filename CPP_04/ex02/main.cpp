@@ -4,23 +4,24 @@
 
 int main()
 {
-
-Animal *animals[10];
-for(int i = 0; i < 10; i++)
-{
-	if(i < 5)
-		animals[i] = new Cat();
-	else
-		animals[i] = new Dog();
-}
-for(int i = 0; i < 10; i++)
-{
-	animals[i]->makeSound();
-}
-for(int i = 0; i < 10; i++)
-{
-	delete animals[i];
-}
+	Animal *animals[10];
+	Animal *dogggg = new Dog();
+	dogggg->makeSound();
+	for(int i = 0; i < 10; i++)
+	{
+		if(i < 5)
+			animals[i] = new Cat();
+		else
+			animals[i] = new Dog();
+	}
+	for(int i = 0; i < 10; i++)
+	{
+		animals[i]->makeSound();
+	}
+	for(int i = 0; i < 10; i++)
+	{
+		delete animals[i];
+	}
 /* const Animal* meta = new Animal();
 const Animal* j = new Dog();
 Animal *cat = new Cat();
@@ -38,5 +39,5 @@ std::cout << dog.get_Type() << " " << std::endl;
 std::cout << meta->get_Type() << " " << std::endl;
 std::cout << cat->get_Type() << " " << std::endl; */
 
-return 0;
+	return 0;
 }

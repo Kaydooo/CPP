@@ -7,11 +7,13 @@ class   ScavTrap : virtual public ClapTrap {
     private:
 
     public:
-            ScavTrap();
-            ~ScavTrap();
-            ScavTrap(std::string name);
+        ScavTrap();
+        ScavTrap(ScavTrap const &src);
+        ~ScavTrap();
+        ScavTrap(std::string name);
+        ScavTrap const &operator=(ScavTrap const &rhs);
 
-            void    guardGate();
+        void    guardGate();
 };
 
 #endif

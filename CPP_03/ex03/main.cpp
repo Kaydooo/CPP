@@ -32,6 +32,8 @@ int main(void) {
 	std::cout << std::endl;
 	DiamondTrap	trap7;
 	DiamondTrap	trap8("Danil");
+	ClapTrap testF;
+	ScavTrap testS;
 	trap7.whoAmI();
 	//trap7.attack()
 	trap7.highFivesGuys();

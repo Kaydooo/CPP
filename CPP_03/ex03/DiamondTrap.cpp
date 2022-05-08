@@ -1,7 +1,7 @@
 #include "DiamondTrap.hpp"
 
 
-DiamondTrap::DiamondTrap():ClapTrap("Default_clap_name", 100, 50, 30), ScavTrap(), FragTrap(){
+DiamondTrap::DiamondTrap():ClapTrap("Default_clap_name", 100, 50, 30)/* , ScavTrap(), FragTrap() */{ // with or without SavTrap(), FragTrap() the program works the same.. whats the diff
 	name = "Default";
 	std::cout << "Diamond Trap : Constructer Called __ DD" << std::endl;
 }

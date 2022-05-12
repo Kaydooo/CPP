@@ -11,7 +11,7 @@ CXX = c++
 
 CXXFLAGS = -Werror -Wall -Wextra -std=c++98
 
-NAME = Fixed_point
+NAME = ex00
 	
 all : $(NAME)
 

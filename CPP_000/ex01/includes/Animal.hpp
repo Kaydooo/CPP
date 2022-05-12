@@ -7,7 +7,6 @@ class Animal
 {
 public:
 	
-
 // ----------------------------- Constructors ------------------------------ //
 	Animal();	// Default Constructor
 	Animal(std::string in_Type);	// Fields Constructor
@@ -24,7 +23,6 @@ public:
 	std::string get_Type() const;
 	void set_Type(std::string input);
 	
-
 // --------------------------------- Methods ------------------------------- //
 
 	virtual void	makeSound() const;

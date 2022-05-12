@@ -3,8 +3,7 @@
 
 	ScavTrap::ScavTrap(void)
 	{
-		std::cout << "Default Constrcuter Called _ SS" << std::endl;
-
+		std::cout << GREEN << "ScavTrap Default Constrcuter Called" << RESET << std::endl;
 		name = "Default";
 		hitpoints = 100;
 		energypoints = 50;
@@ -13,8 +12,7 @@
 
 	ScavTrap::ScavTrap(std::string str){
 
-		std::cout << "Constrcuter Called __ SS" << std::endl;
-
+		std::cout << GREEN << "ScavTrap Default Constrcuter Called" << RESET << std::endl;
 		name = str;
 		hitpoints = 100;
 		energypoints = 50;
@@ -23,8 +21,17 @@
 
 	ScavTrap::~ScavTrap(void)
 	{
-		std::cout << "Destructor Called _ SS" << std::endl;
+		std::cout << RED << "ScavTrap Destrcuter Called" << RESET << std::endl;
+	}
 
+	ScavTrap &ScavTrap::operator=(ScavTrap const &rhs)
+	{
+		name = rhs.name;
+		hitpoints = rhs.hitpoints;
+		energypoints = rhs.energypoints;
+		attackdamage = rhs.attackdamage;
+		std::cout << GREEN << "ScavTrap Copy Assignment Constrcuter Called" << RESET << std::endl;
+		return (*this);
 	}
 
 	void	ScavTrap::guardGate()

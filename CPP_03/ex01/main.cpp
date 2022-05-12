@@ -15,7 +15,13 @@ int main(void) {
 
 	trap4.attack("Dan");
 	trap4.takeDamage(3);
+	trap4.attack("Dan");
 	trap3.beRepaired(2);
+	trap3.attack("Dan");
+	trap3 = trap4;
+	trap3.attack("Dan");
+
+	
 
 	trap4.guardGate();
 	return 0;

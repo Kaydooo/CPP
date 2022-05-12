@@ -20,13 +20,13 @@ bool bsp( Point const a, Point const b, Point const c, Point const point)
 	if(area < 0)
 		area = area * -1;
 	if(area1 < 0)
-	area1 = area1 * -1;
+		area1 = area1 * -1;
 	if(area2 < 0)
-	area2 = area2 * -1;
+		area2 = area2 * -1;
 	if(area3 < 0)
-	area3 = area3 * -1;
+		area3 = area3 * -1;
 	
-	if(area == (area1 + area2 + area3))
+	if(area == (area1 + area2 + area3) && area1 !=0 && area2 != 0 && area3 != 0)
 		return (1);
 	return (0);
 }

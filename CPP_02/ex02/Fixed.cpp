@@ -21,7 +21,6 @@ Fixed::Fixed(const float float_value)
 	value = roundf(float_value * (1 << bits));
 }
 
-
 Fixed::Fixed( const Fixed & src )
 {
 	//std::cout << "P_Constructer Called" << std::endl;
@@ -175,8 +174,6 @@ Fixed  &Fixed::max(Fixed  &lhs, Fixed  &rhs)
 		return lhs;
 	return rhs;
 }
-
-
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------

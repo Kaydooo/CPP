@@ -6,25 +6,25 @@
 
 Fixed::Fixed()
 {
-	std::cout << "Default Constructer Called" << std::endl;
+	std::cout << GREEN << "Default Constructer Called" << RESET << std::endl;
 	value = 0;
 }
 
 Fixed::Fixed(const int int_value)
 {
-	std::cout << "Int Constructer Called" << std::endl;
+	std::cout << CYAN << "Int Constructer Called" << RESET << std::endl;
 	value = int_value << bits;
 }
+
 Fixed::Fixed(const float float_value)
 {
-	std::cout << "Float Constructer Called" << std::endl;
+	std::cout << CYAN << "Float Constructer Called" << RESET << std::endl;
 	value = roundf(float_value * (1 << bits));
 }
 
-
 Fixed::Fixed( const Fixed & src )
 {
-	std::cout << "P_Constructer Called" << std::endl;
+	std::cout << CYAN << "Copy Constructer Called" << RESET << std::endl;
 	*this = src;
 }
 
@@ -34,7 +34,7 @@ Fixed::Fixed( const Fixed & src )
 
 Fixed::~Fixed()
 {
-	std::cout << "Destructor Called" << std::endl;
+	std::cout << RED << "Destructor Called" << RESET << std::endl;
 }
 
 /*
@@ -43,7 +43,7 @@ Fixed::~Fixed()
 
 Fixed &Fixed::operator=( Fixed const & rhs )
 {
-	std::cout << "Operator= Overload Called" << std::endl;
+	std::cout << YELLOW << "Copy assignment operator called" << RESET << std::endl;
 	if ( this != &rhs )
 	{
 		this->value = rhs.getRawBits();
@@ -79,7 +79,6 @@ float	Fixed::toFloat(void) const
 	//std::cout << "toFloat Called" << std::endl;
 	return((float)value / (1<<bits));
 }
-
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------

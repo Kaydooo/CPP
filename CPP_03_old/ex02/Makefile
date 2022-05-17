@@ -3,7 +3,7 @@
 # $@ "include target"
 # $^ "include the full list of prerequisites)"
 
-SRCS = main.cpp ClapTrap.cpp
+SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
@@ -11,7 +11,7 @@ CXX = c++
 
 CXXFLAGS = -Werror -Wall -Wextra -std=c++98
 
-NAME = ex00
+NAME = ex02
 	
 all : $(NAME)
 

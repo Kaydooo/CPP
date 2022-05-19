@@ -3,6 +3,7 @@
 // ----------------------------- Constructors ------------------------------ //
 Animal::Animal()
 {
+	Type = "Animal";
 	_ANIMAL_AUTO(32, "Default Constructor");
 }
 
@@ -33,7 +34,6 @@ Animal & Animal::operator=(const Animal& c)
 // --------------------------- Getters && Setters -------------------------- //
 std::string Animal::get_Type() const{ return Type; }
 void Animal::set_Type(std::string input){ Type = input; }
-
 
 
 // --------------------------------- Methods ------------------------------- //

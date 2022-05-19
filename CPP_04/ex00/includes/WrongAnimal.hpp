@@ -14,7 +14,7 @@ public:
 	WrongAnimal(const WrongAnimal& c);	// Copy Constructor
 
 // ------------------------------ Destructor ------------------------------- //
-	~WrongAnimal();	// Destructor
+	virtual ~WrongAnimal();	// Destructor
 
 // ------------------------------- Operators ------------------------------- //
 	WrongAnimal & operator=(const WrongAnimal& a);

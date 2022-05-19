@@ -1,5 +1,4 @@
 #include "Dog.hpp"
-#include "Dog.hpp"
 
 // ----------------------------- Constructors ------------------------------ //
 Dog::Dog()

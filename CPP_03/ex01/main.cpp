@@ -1,28 +1,21 @@
 #include "ScavTrap.hpp"
 
 
-int main(void) {
-
-    ClapTrap	trap1;
-	ClapTrap	trap2("Cat");
-
-	trap1.attack("Dog");
-	trap1.takeDamage(3);
-	trap2.beRepaired(2);
-	std::cout << std::endl;
-	ScavTrap	trap3;
-	ScavTrap	trap4("Alex");
-
-	trap4.attack("Dan");
-	trap4.takeDamage(3);
-	trap4.attack("Dan");
-	trap3.beRepaired(2);
-	trap3.attack("Dan");
-	trap3 = trap4;
-	trap3.attack("Dan");
-
-	
-
-	trap4.guardGate();
+int main(void) 
+{
+	ClapTrap DefaultTank;
+	DefaultTank.attack("Dummy Tank");
+	DefaultTank.takeDamage(30);
+	DefaultTank.beRepaired(10);
+	DefaultTank.attack("Dummy Tank");
+	ScavTrap Tank2("Tank2");
+	Tank2.attack("Dummy Tank 2");
+	Tank2.takeDamage(9);
+	Tank2.beRepaired(10);
+	Tank2.attack("Dummy Tank 2");
+	Tank2.takeDamage(102);
+	Tank2.takeDamage(10);
+	Tank2.attack("Dummy Tank 2");
+	Tank2.guardGate();
 	return 0;
 }

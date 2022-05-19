@@ -17,15 +17,15 @@ class ClapTrap{
 		int			attackdamage;
 	
 	public:
-	ClapTrap(void);
-	ClapTrap(std::string str);
-	ClapTrap(std::string n, int hp, int ep, int ad);
-	ClapTrap(ClapTrap const &src);
-	ClapTrap &operator=(ClapTrap const &rhs);
-	~ClapTrap(void);
+		ClapTrap(void);
+		ClapTrap(std::string str);
+		ClapTrap(std::string n, int hp, int ep, int ad);
+		ClapTrap(ClapTrap const &src);
+		ClapTrap &operator=(ClapTrap const &rhs);
+		~ClapTrap(void);
 
-	void attack(const std::string& target);
-	void takeDamage(unsigned int amount);
-	void beRepaired(unsigned int amount);
+		void attack(const std::string& target);
+		void takeDamage(unsigned int amount);
+		void beRepaired(unsigned int amount);
 };
 #endif

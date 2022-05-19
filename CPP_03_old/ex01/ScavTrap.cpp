@@ -3,7 +3,7 @@
 
 	ScavTrap::ScavTrap(void)
 	{
-		std::cout << "Default Constrcuter Called _ SS" << std::endl;
+		std::cout << "Default Constructor Called _ SS" << std::endl;
 
 		name = "Default";
 		hitpoints = 100;
@@ -13,7 +13,7 @@
 
 	ScavTrap::ScavTrap(std::string str){
 
-		std::cout << "Constrcuter Called __ SS" << std::endl;
+		std::cout << "Constructor Called __ SS" << std::endl;
 
 		name = str;
 		hitpoints = 100;

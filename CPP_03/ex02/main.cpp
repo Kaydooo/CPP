@@ -1,36 +1,31 @@
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 
-int main(void) {
+int main(void) 
+{
+	ClapTrap DefaultTank;
+	DefaultTank.attack("Dummy Tank");
+	DefaultTank.takeDamage(30);
+	DefaultTank.beRepaired(10);
+	DefaultTank.attack("Dummy Tank");
+	ScavTrap Tank2("Tank2");
+	Tank2.attack("Dummy Tank 2");
+	Tank2.takeDamage(9);
+	Tank2.beRepaired(10);
+	Tank2.attack("Dummy Tank 2");
+	Tank2.takeDamage(102);
+	Tank2.takeDamage(10);
+	Tank2.attack("Dummy Tank 2");
+	Tank2.guardGate();
 
-    ClapTrap	trap1;
-	ClapTrap	trap2("Cat");
-	
-	trap1.takeDamage(3);
-	trap1.attack("Dog");
-	trap1.beRepaired(5);
-	trap1.attack("Dog");
-	trap2.takeDamage(20);
-	trap2.attack("Dog");
-	trap2.beRepaired(5);
-	trap2.attack("Dog");
-
-
-
-	std::cout << std::endl << std::endl << std::endl;
-	ScavTrap	trap3;
-	ScavTrap	trap4("Alex");
-	trap4.attack("Dan");
-	trap4.takeDamage(3);
-	trap3.beRepaired(2);
-	trap4.guardGate();
-
-	std::cout << std::endl;
-	FragTrap	trap5;
-	FragTrap	trap6("Dasha");
-	trap6.attack("Igor");
-	trap6.takeDamage(3);
-	trap5.beRepaired(2);
-	trap6.highFivesGuys();
+	FragTrap F_Tank("F_Tank");
+	F_Tank.attack("Dummy Tank 3");
+	F_Tank.takeDamage(9);
+	F_Tank.beRepaired(10);
+	F_Tank.attack("Dummy Tank 3");
+	F_Tank.takeDamage(102);
+	F_Tank.takeDamage(10);
+	F_Tank.attack("Dummy Tank 3");
+	F_Tank.highFivesGuys();
 	return 0;
 }

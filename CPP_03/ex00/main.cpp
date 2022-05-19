@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mal-guna <m3t9mm@gmail.com>                +#+  +:+       +#+        */
+/*   By: mal-guna <mal-guna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 14:50:07 by mal-guna          #+#    #+#             */
-/*   Updated: 2022/05/12 14:50:08 by mal-guna         ###   ########.fr       */
+/*   Updated: 2022/05/19 05:56:00 by mal-guna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,28 @@
 
 int main(void) {
 
-    ClapTrap tank1;
-	ClapTrap tank2("Tank2");
-	ClapTrap tank3(tank2);
-	tank1.attack("Enemy1");
-	tank1.takeDamage(11);
-	tank1.attack("Enemy2");
-	tank1.beRepaired(2);
-	tank1.attack("Enemy3");
-	tank2.beRepaired(2);
-	tank3.takeDamage(5);
-	tank3 = tank1;
-	tank3.takeDamage(3);
+	ClapTrap DefaultTank;
+	DefaultTank.attack("Dummy Tank");
+	DefaultTank.takeDamage(30);
+	DefaultTank.beRepaired(10);
+	DefaultTank.attack("Dummy Tank");
+	ClapTrap Tank2("Tank2");
+	Tank2.attack("Dummy Tank 2");
+	Tank2.takeDamage(9);
+	Tank2.beRepaired(10);
+	Tank2.attack("Dummy Tank 2");
+	ClapTrap Tank2_dup(Tank2);
+	Tank2_dup.attack("Dummy Tank 3");
+	Tank2_dup.takeDamage(10);
+	Tank2_dup.takeDamage(9);
+	Tank2_dup.takeDamage(9);
+	Tank2_dup.beRepaired(15);
+	Tank2_dup.attack("Dummy Tank 3");
+	Tank2_dup.beRepaired(15);
+	Tank2_dup.beRepaired(15);
+	Tank2_dup.beRepaired(15);
+	Tank2_dup.beRepaired(15);
+	Tank2_dup.beRepaired(15);
+	Tank2_dup.attack("Dummy Tank 3");
 	return 0;
 }

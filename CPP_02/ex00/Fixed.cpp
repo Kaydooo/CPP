@@ -6,13 +6,13 @@
 
 Fixed::Fixed()
 {
-	std::cout << GREEN << "Default Constructer Called" << RESET << std::endl;
+	std::cout << GREEN << "Default Constructor Called" << RESET << std::endl;
 	value = 0;
 }
 
 Fixed::Fixed( const Fixed & src )
 {
-	std::cout << CYAN << "Copy Constructer Called" << RESET << std::endl;
+	std::cout << CYAN << "Copy Constructor Called" << RESET << std::endl;
 	*this = src;
 }
 

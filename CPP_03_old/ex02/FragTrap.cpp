@@ -3,7 +3,7 @@
 
 	FragTrap::FragTrap(void)
 	{
-		std::cout << "Default Constrcuter Called _ FF" << std::endl;
+		std::cout << "Default Constructor Called _ FF" << std::endl;
 
 		name = "Default";
 		hitpoints = 100;
@@ -13,7 +13,7 @@
 
 	FragTrap::FragTrap(std::string str){
 
-		std::cout << "Constrcuter Called __ FF" << std::endl;
+		std::cout << "Constructor Called __ FF" << std::endl;
 
 		name = str;
 		hitpoints = 100;

@@ -1,17 +1,17 @@
 #include "ClapTrap.hpp"
 	
 	ClapTrap::ClapTrap():name("Default"), hitpoints(10),energypoints(10), attackdamage(0){
-		std::cout << "Default Constrcuter Called" << std::endl;
+		std::cout << "Default Constructor Called" << std::endl;
 	}
 	ClapTrap::ClapTrap(std::string str): name(str), hitpoints(10),energypoints(10), attackdamage(0){
-		std::cout << "Constrcuter Called" << std::endl;
+		std::cout << "Constructor Called" << std::endl;
 	}
 
 	ClapTrap::ClapTrap(ClapTrap const &src):name(src.name), hitpoints(src.hitpoints),
 											energypoints(src.energypoints), attackdamage(src.attackdamage){
 	}
 	ClapTrap::~ClapTrap(){
-		std::cout << "Destrcuter Called" << std::endl;
+		std::cout << "Destructor Called" << std::endl;
 
 	}
 	ClapTrap &ClapTrap::operator=(ClapTrap const &rhs){

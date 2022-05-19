@@ -6,25 +6,25 @@
 
 Fixed::Fixed()
 {
-	std::cout << GREEN << "Default Constructer Called" << RESET << std::endl;
+	std::cout << GREEN << "Default Constructor Called" << RESET << std::endl;
 	value = 0;
 }
 
 Fixed::Fixed(const int int_value)
 {
-	std::cout << CYAN << "Int Constructer Called" << RESET << std::endl;
+	std::cout << CYAN << "Int Constructor Called" << RESET << std::endl;
 	value = int_value << bits;
 }
 
 Fixed::Fixed(const float float_value)
 {
-	std::cout << CYAN << "Float Constructer Called" << RESET << std::endl;
+	std::cout << CYAN << "Float Constructor Called" << RESET << std::endl;
 	value = roundf(float_value * (1 << bits));
 }
 
 Fixed::Fixed( const Fixed & src )
 {
-	std::cout << CYAN << "Copy Constructer Called" << RESET << std::endl;
+	std::cout << CYAN << "Copy Constructor Called" << RESET << std::endl;
 	*this = src;
 }
 

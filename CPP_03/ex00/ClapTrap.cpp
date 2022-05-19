@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mal-guna <m3t9mm@gmail.com>                +#+  +:+       +#+        */
+/*   By: mal-guna <mal-guna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 14:50:04 by mal-guna          #+#    #+#             */
-/*   Updated: 2022/05/12 15:08:05 by mal-guna         ###   ########.fr       */
+/*   Updated: 2022/05/19 06:21:57 by mal-guna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,20 @@
 	
 	ClapTrap::ClapTrap():name("Default"), hitpoints(10),energypoints(10), attackdamage(0)
 	{
-		std::cout << GREEN << "Default Constrcuter Called" << RESET << std::endl;
+		std::cout << GREEN << "Default Constructor Called" << RESET << std::endl;
 	}
 	
 	ClapTrap::ClapTrap(std::string str): name(str), hitpoints(10),energypoints(10), attackdamage(0){
-		std::cout << GREEN << "String Constrcuter Called" << RESET << std::endl;
+		std::cout << GREEN << "String Constructor Called" << RESET << std::endl;
 	}
 
 	ClapTrap::ClapTrap(ClapTrap const &src):name(src.name), hitpoints(src.hitpoints),
 											energypoints(src.energypoints), attackdamage(src.attackdamage){
-		std::cout << GREEN << "Copy Constrcuter Called" << RESET << std::endl;
+		std::cout << GREEN << "Copy Constructor Called" << RESET << std::endl;
 	}
 	
 	ClapTrap::~ClapTrap(){
-		std::cout << RED << "Destrcuter Called" << RESET << std::endl;
-
+		std::cout << RED << "Destructor Called" << RESET << std::endl;
 	}
 	
 	ClapTrap &ClapTrap::operator=(ClapTrap const &rhs){
@@ -36,7 +35,7 @@
 		hitpoints = rhs.hitpoints;
 		energypoints = rhs.energypoints;
 		attackdamage = rhs.attackdamage;
-		std::cout << GREEN << "Copy Assignment Constrcuter Called" << RESET << std::endl;
+		std::cout << GREEN << "Copy Assignment Constructor Called" << RESET << std::endl;
 		return (*this);
 	}
 	
@@ -49,6 +48,7 @@
 		}
 		else
 			std::cout << name << ": there is no Enegry/HP left .." << std::endl;
+		std::cout << "Energy points : " << energypoints << std::endl << "Hit Points :    " << hitpoints << std::endl; 
 	}
 
 	void ClapTrap::takeDamage(unsigned int amount)

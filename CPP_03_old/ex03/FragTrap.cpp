@@ -3,12 +3,12 @@
 
 	FragTrap::FragTrap(void) : ClapTrap("Default Frag", 100, 100, 30)
 	{
-		std::cout << "Frag Trap Default Constrcuter Called _ FF" << std::endl;
+		std::cout << "Frag Trap Default Constructor Called _ FF" << std::endl;
 	}
 
 	FragTrap::FragTrap(std::string str){
 
-		std::cout << "Frag Trap Constrcuter Called __ FF" << std::endl;
+		std::cout << "Frag Trap Constructor Called __ FF" << std::endl;
 
 		name = str;
 		hitpoints = 100;

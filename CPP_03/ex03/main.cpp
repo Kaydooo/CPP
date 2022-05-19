@@ -1,45 +1,28 @@
 #include "DiamondTrap.hpp"
 
-#include "DiamondTrap.hpp"
+int main(void) 
+{
+	ClapTrap DefaultTank;
+	DefaultTank.attack("Dummy Tank");
+	DefaultTank.takeDamage(30);
+	DefaultTank.beRepaired(10);
+	DefaultTank.attack("Dummy Tank");
 
-int main(void) {
 
-    // ClapTrap	trap1;
-	// ClapTrap	trap2("Cat");
+	DiamondTrap D_Tank("D_Tank");
+	D_Tank.print_status();
+	D_Tank.attack("Dummy Tank 2");
+	D_Tank.takeDamage(9);
+	D_Tank.beRepaired(10);
+	D_Tank.attack("Dummy Tank 2");
+	D_Tank.takeDamage(102);
+	D_Tank.takeDamage(10);
+	D_Tank.attack("Dummy Tank 2");
+	D_Tank.highFivesGuys();
+	D_Tank.whoAmI();
 
-	// std::cout << trap2.getEnergy() << std::endl;
-	// trap1.attack("Dog");
-	// trap1.takeDamage(3);
-	// trap2.beRepaired(2);
-	// std::cout << trap1.getEnergy() << std::endl;
 
-	// std::cout << std::endl;
-	// ScavTrap	trap3;
-	// ScavTrap	trap4("Alex");
-	// trap4.attack("Dan");
-	// trap4.takeDamage(3);
-	// trap3.beRepaired(2);
-	// trap4.guardGate();
-
-	// std::cout << std::endl;
-	// FragTrap	trap5;
-	// FragTrap	trap6("Dasha");
-	// trap6.attack("Igor");
-	// trap6.takeDamage(3);
-	// trap5.beRepaired(2);
-	// trap6.highFivesGuys();
-
-	std::cout << std::endl;
-	DiamondTrap	trap7;
-	DiamondTrap	trap8("Danil");
-	ClapTrap testF;
-	ScavTrap testS;
-	trap7.whoAmI();
-	//trap7.attack()
-	trap7.highFivesGuys();
-	trap8.guardGate();
-	trap8.takeDamage(15);
-	trap7.beRepaired(9);
-	std::cout << std::endl;
+	DiamondTrap D_Tank_dup(D_Tank);
+	D_Tank_dup.attack("Dummmmyyyyyyy");
 	return 0;
 }

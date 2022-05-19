@@ -1,23 +1,23 @@
 #include "ClapTrap.hpp"
 	
 	ClapTrap::ClapTrap():name("Default"), hitpoints(10),energypoints(10), attackdamage(0){
-		std::cout << "Clap Trap Default Constrcuter Called __ CC" << std::endl;
+		std::cout << "Clap Trap Default Constructor Called __ CC" << std::endl;
 	}
 	ClapTrap::ClapTrap(std::string str): name(str), hitpoints(10),energypoints(10), attackdamage(0){
 
-		std::cout << "Clap Trap Constrcuter Called __ CC" << std::endl;
+		std::cout << "Clap Trap Constructor Called __ CC" << std::endl;
 	}
 
 	ClapTrap::ClapTrap(std::string str, int hp, int ep, int ad): name(str), hitpoints(hp),energypoints(ep), attackdamage(ad){
-		std::cout << "Clap Trap  Parmaters_Constrcuter Called __ CC" << std::endl;
+		std::cout << "Clap Trap  Parmaters_Constructor Called __ CC" << std::endl;
 	}
 
 	ClapTrap::ClapTrap(ClapTrap const &src):name(src.name), hitpoints(src.hitpoints), energypoints(src.energypoints), attackdamage(src.attackdamage){
-		std::cout << "Clap Trap Copy Constrcuter Called __ CC" << std::endl;
+		std::cout << "Clap Trap Copy Constructor Called __ CC" << std::endl;
 	}
 	
 	ClapTrap::~ClapTrap(){
-		std::cout << "Clap Trap Destrcuter Called __ CC" << std::endl;
+		std::cout << "Clap Trap Destructor Called __ CC" << std::endl;
 	}
 	ClapTrap &ClapTrap::operator=(ClapTrap const &rhs){
 		name = rhs.name;

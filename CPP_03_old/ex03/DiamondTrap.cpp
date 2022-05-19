@@ -3,11 +3,11 @@
 
 DiamondTrap::DiamondTrap():ClapTrap("Default_clap_name", 100, 50, 30)/* , ScavTrap(), FragTrap() */{ // with or without SavTrap(), FragTrap() the program works the same.. whats the diff
 	name = "Default";
-	std::cout << "Diamond Trap : Constructer Called __ DD" << std::endl;
+	std::cout << "Diamond Trap : Constructor Called __ DD" << std::endl;
 }
 DiamondTrap::DiamondTrap(std::string n):ClapTrap(n + "_clap_name", 100, 50, 30), ScavTrap(), FragTrap(){
 	name = n;
-	std::cout << "Diamond Trap : Str_par_Constructer Called __ DD" << std::endl;
+	std::cout << "Diamond Trap : Str_par_Constructor Called __ DD" << std::endl;
 }
 DiamondTrap::DiamondTrap(DiamondTrap const &src): ClapTrap(src.name + "clap_name", 100, 50, 30), ScavTrap(), FragTrap(){
 	name = src.name;

@@ -9,8 +9,6 @@
 #define RESET "\033[0m"
 class   FragTrap : virtual public ClapTrap {
 
-    private:
-
     public:
             FragTrap();
             FragTrap(std::string name);

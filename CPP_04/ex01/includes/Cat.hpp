@@ -7,7 +7,6 @@
 
 class Cat: virtual public Animal
 {
-
 private:
 	Brain *b_obj;
 public:

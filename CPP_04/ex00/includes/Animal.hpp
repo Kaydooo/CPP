@@ -6,8 +6,6 @@
 class Animal
 {
 public:
-	
-
 // ----------------------------- Constructors ------------------------------ //
 	Animal();	// Default Constructor
 	Animal(std::string in_Type);	// Fields Constructor

@@ -23,7 +23,6 @@ public:
 // --------------------------- Getters && Setters -------------------------- //
 	std::string get_ideas(int index) const;
 	void set_ideas(std::string input, int index);
-	
 
 // --------------------------------- Methods ------------------------------- //
 

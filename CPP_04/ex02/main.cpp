@@ -7,6 +7,7 @@ int main()
 	Animal *animals[10];
 	Animal *dogggg = new Dog();
 	dogggg->makeSound();
+	//Animal aanimal;
 	for(int i = 0; i < 10; i++)
 	{
 		if(i < 5)
@@ -22,6 +23,7 @@ int main()
 	{
 		delete animals[i];
 	}
+	delete dogggg;
 /* const Animal* meta = new Animal();
 const Animal* j = new Dog();
 Animal *cat = new Cat();

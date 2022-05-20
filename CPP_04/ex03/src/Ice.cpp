@@ -1,33 +1,32 @@
-#include "AMateria.hpp"
+#include "Ice.hpp"
 
 // ----------------------------- Constructors ------------------------------ //
-AMateria::AMateria()
+Ice::Ice()
 {
-	type = "No Type";
-	_AMATERIA_AUTO(32, "Default Constructor");
+	type = "ice";
+	_ICE_AUTO(32, "Default Constructor");
 }
 
-AMateria::AMateria(const AMateria& c)
+Ice::Ice(const Ice& c)
 {
 	type = c.type;
-	_AMATERIA_AUTO(32, "Copy Constructor");
-	
+	ICE_AUTO(32, "Copy Constructor");
 }
 
-std::string const & AMateria::getType() const
+Ice::Ice() 
 {
-	return (type);
+	_ICE_AUTO(32, "Fields Constructor");
 }
+
 // ------------------------------ Destructor ------------------------------- //
-AMateria::~AMateria()
+Ice::~Ice()
 {
-	_AMATERIA_AUTO(31, "Destructor called");
+	_ICE_AUTO(31, "Destructor called");
 }
 // ------------------------------- Operators ------------------------------- //
 
-AMateria & AMateria::operator=(const AMateria& c)
+Ice & Ice::operator=(const Ice& c)
 {
-	type = c.type;
 	return *this;
 }
 
@@ -36,3 +35,8 @@ AMateria & AMateria::operator=(const AMateria& c)
 
 // --------------------------------- Methods ------------------------------- //
 
+Ice*	Ice::clone() const
+{
+	Ice *n = new Ice();
+	return n;
+}

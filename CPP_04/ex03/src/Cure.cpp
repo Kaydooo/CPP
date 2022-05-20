@@ -1,33 +1,28 @@
-#include "AMateria.hpp"
+#include "Cure.hpp"
 
 // ----------------------------- Constructors ------------------------------ //
-AMateria::AMateria()
+Cure::Cure()
 {
-	type = "No Type";
-	_AMATERIA_AUTO(32, "Default Constructor");
+	type = "cure";
+	_CURE_AUTO(32, "Default Constructor");
 }
 
-AMateria::AMateria(const AMateria& c)
+Cure::Cure(const Cure& c)
 {
-	type = c.type;
-	_AMATERIA_AUTO(32, "Copy Constructor");
+	_CURE_AUTO(32, "Copy Constructor");
 	
 }
 
-std::string const & AMateria::getType() const
-{
-	return (type);
-}
 // ------------------------------ Destructor ------------------------------- //
-AMateria::~AMateria()
+Cure::~Cure()
 {
-	_AMATERIA_AUTO(31, "Destructor called");
+	_CURE_AUTO(31, "Destructor called");
 }
 // ------------------------------- Operators ------------------------------- //
 
-AMateria & AMateria::operator=(const AMateria& c)
+Cure & Cure::operator=(const Cure& c)
 {
-	type = c.type;
+	
 	return *this;
 }
 
@@ -36,3 +31,8 @@ AMateria & AMateria::operator=(const AMateria& c)
 
 // --------------------------------- Methods ------------------------------- //
 
+Cure*	Cure::clone() const
+{
+	Cure *n = new Cure();
+	return n;
+}

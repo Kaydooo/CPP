@@ -3,7 +3,7 @@
 # $@ "include target"
 # $^ "include the full list of prerequisites)"
 
-SRCS = main.cpp src/AMateria.cpp
+SRCS = main.cpp src/AMateria.cpp src/Ice.cpp src/Cure.cpp 
 
 OBJS = ${SRCS:.cpp=.o}
 

@@ -1,32 +1,31 @@
-#ifndef AMATERIA_HPP
-# define AMATERIA_HPP
+#ifndef ICE_HPP
+# define ICE_HPP
 
 # include <iostream>
+# include "AMateria.hpp"
 
-class AMateria
+class Ice: public AMateria
 {
 public:
 
 // ----------------------------- Constructors ------------------------------ //
-	AMateria();	// Default Constructor
-	AMateria(const AMateria& c);	// Copy Constructor
+	Ice();	// Default Constructor
+	Ice(const Ice& c);	// Copy Constructor
 
 // ------------------------------ Destructor ------------------------------- //
-	virtual ~AMateria();	// Destructor
+	~Ice();	// Destructor
 
 // ------------------------------- Operators ------------------------------- //
-	AMateria & operator=(const AMateria& a);
+	Ice & operator=(const Ice& a);
 	// Copy Assignement Operator
 
 // --------------------------- Getters && Setters -------------------------- //
-	std::string const & getType() const; //Returns the materia type
+	
 
 // --------------------------------- Methods ------------------------------- //
-	virtual AMateria* clone() const = 0;
-	//virtual void use(ICharacter& target);
-
-protected:
-	std::string type;
+	Ice* clone() const;
+private:
+	
 
 };
 
@@ -36,19 +35,19 @@ protected:
 #   define _ARG(arg) #arg << "(" << arg << ") "
 #  endif /* _ARG */
 
-#  define _AMATERIA_ARGS 
-#  define _AMATERIA_AUTO(COLOR_CODE, TEXT) \
+#  define _ICE_ARGS 
+#  define _ICE_AUTO(COLOR_CODE, TEXT) \
 	std::cout << "{ \e[" << COLOR_CODE << ";1m"                 \
 			  << TEXT << " " << __PRETTY_FUNCTION__ << "\e[0m " \
 			  << "[\033[34;47m" << this                         \
-			  << "\033[0m]\033[0m: " << _AMATERIA_ARGS  \
+			  << "\033[0m]\033[0m: " << _ICE_ARGS  \
 			  << "}" << std::endl;
 # else
 
-#  define _AMATERIA_AUTO(x, y) ;
-#  define _AMATERIA_ARGS ""
+#  define _ICE_AUTO(x, y) ;
+#  define _ICE_ARGS ""
 #  define _ARG ""
 
 # endif /* NO_DEBUG */
 
-#endif /* AMATERIA_HPP */
+#endif /* ICE_HPP */

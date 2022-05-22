@@ -1,32 +1,25 @@
 #include "Ice.hpp"
-
+#include "ICharacter.hpp"
 // ----------------------------- Constructors ------------------------------ //
 Ice::Ice()
 {
 	type = "ice";
-	_ICE_AUTO(32, "Default Constructor");
 }
 
-Ice::Ice(const Ice& c)
+Ice::Ice(const Ice& c):AMateria()
 {
-	type = c.type;
-	ICE_AUTO(32, "Copy Constructor");
-}
-
-Ice::Ice() 
-{
-	_ICE_AUTO(32, "Fields Constructor");
+	*this = c;
 }
 
 // ------------------------------ Destructor ------------------------------- //
 Ice::~Ice()
 {
-	_ICE_AUTO(31, "Destructor called");
 }
 // ------------------------------- Operators ------------------------------- //
 
 Ice & Ice::operator=(const Ice& c)
 {
+	*this = c;
 	return *this;
 }
 
@@ -39,4 +32,9 @@ Ice*	Ice::clone() const
 {
 	Ice *n = new Ice();
 	return n;
+}
+
+void	Ice::use(ICharacter& target)
+{
+	std::cout << "* shoots an ice bolt at  " << target.getName() << " *" << std::endl;
 }

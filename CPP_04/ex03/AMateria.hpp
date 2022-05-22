@@ -3,16 +3,25 @@
 
 # include <iostream>
 
+
+#define RED "\033[0;31m"
+#define GREEN "\033[1;32m"
+#define CYAN "\033[0;36m"
+#define YELLOW "\033[1;33m"
+#define RESET "\033[0m"
+class ICharacter;
+
 class AMateria
 {
 public:
 
 // ----------------------------- Constructors ------------------------------ //
 	AMateria();	// Default Constructor
-	AMateria(const AMateria& c);	// Copy Constructor
-
+	//AMateria(const AMateria& c);	// Copy Constructor
+	AMateria(std::string const & type);
+	AMateria(const AMateria& c);
 // ------------------------------ Destructor ------------------------------- //
-	virtual ~AMateria();	// Destructor
+	virtual ~AMateria() = 0;	// Destructor
 
 // ------------------------------- Operators ------------------------------- //
 	AMateria & operator=(const AMateria& a);
@@ -23,32 +32,11 @@ public:
 
 // --------------------------------- Methods ------------------------------- //
 	virtual AMateria* clone() const = 0;
-	//virtual void use(ICharacter& target);
+	virtual void use(ICharacter& target);
 
 protected:
 	std::string type;
 
 };
 
-# ifndef NO_DEBUG
-
-#  ifndef _ARG
-#   define _ARG(arg) #arg << "(" << arg << ") "
-#  endif /* _ARG */
-
-#  define _AMATERIA_ARGS 
-#  define _AMATERIA_AUTO(COLOR_CODE, TEXT) \
-	std::cout << "{ \e[" << COLOR_CODE << ";1m"                 \
-			  << TEXT << " " << __PRETTY_FUNCTION__ << "\e[0m " \
-			  << "[\033[34;47m" << this                         \
-			  << "\033[0m]\033[0m: " << _AMATERIA_ARGS  \
-			  << "}" << std::endl;
-# else
-
-#  define _AMATERIA_AUTO(x, y) ;
-#  define _AMATERIA_ARGS ""
-#  define _ARG ""
-
-# endif /* NO_DEBUG */
-
-#endif /* AMATERIA_HPP */
+#endif

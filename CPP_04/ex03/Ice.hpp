@@ -24,30 +24,9 @@ public:
 
 // --------------------------------- Methods ------------------------------- //
 	Ice* clone() const;
-private:
+	void use(ICharacter& target);
 	
 
 };
-
-# ifndef NO_DEBUG
-
-#  ifndef _ARG
-#   define _ARG(arg) #arg << "(" << arg << ") "
-#  endif /* _ARG */
-
-#  define _ICE_ARGS 
-#  define _ICE_AUTO(COLOR_CODE, TEXT) \
-	std::cout << "{ \e[" << COLOR_CODE << ";1m"                 \
-			  << TEXT << " " << __PRETTY_FUNCTION__ << "\e[0m " \
-			  << "[\033[34;47m" << this                         \
-			  << "\033[0m]\033[0m: " << _ICE_ARGS  \
-			  << "}" << std::endl;
-# else
-
-#  define _ICE_AUTO(x, y) ;
-#  define _ICE_ARGS ""
-#  define _ARG ""
-
-# endif /* NO_DEBUG */
 
 #endif /* ICE_HPP */

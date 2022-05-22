@@ -3,13 +3,13 @@
 # $@ "include target"
 # $^ "include the full list of prerequisites)"
 
-SRCS = main.cpp src/AMateria.cpp src/Ice.cpp src/Cure.cpp 
+SRCS = main.cpp AMateria.cpp Ice.cpp Cure.cpp Character.cpp MateriaSource.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
 CXX = c++
 
-CXXFLAGS = -Werror -Wall -Wextra -I./includes -std=c++98
+CXXFLAGS = -Werror -Wall -Wextra -std=c++98
 
 NAME = ex03
 	

@@ -1,33 +1,28 @@
-#include "AMateria.hpp"
-
+#include "Cure.hpp"
+#include "ICharacter.hpp"
 // ----------------------------- Constructors ------------------------------ //
-AMateria::AMateria()
+Cure::Cure()
 {
-	type = "No Type";
-	_AMATERIA_AUTO(32, "Default Constructor");
+	type = "cure";
+
 }
 
-AMateria::AMateria(const AMateria& c)
+Cure::Cure(const Cure& c):AMateria()
 {
-	type = c.type;
-	_AMATERIA_AUTO(32, "Copy Constructor");
-	
+	*this = c;
+
 }
 
-std::string const & AMateria::getType() const
-{
-	return (type);
-}
 // ------------------------------ Destructor ------------------------------- //
-AMateria::~AMateria()
+Cure::~Cure()
 {
-	_AMATERIA_AUTO(31, "Destructor called");
+
 }
 // ------------------------------- Operators ------------------------------- //
 
-AMateria & AMateria::operator=(const AMateria& c)
+Cure & Cure::operator=(const Cure& c)
 {
-	type = c.type;
+	*this = c;
 	return *this;
 }
 
@@ -36,3 +31,12 @@ AMateria & AMateria::operator=(const AMateria& c)
 
 // --------------------------------- Methods ------------------------------- //
 
+Cure*	Cure::clone() const
+{
+	Cure *n = new Cure();
+	return n;
+}
+void	Cure::use(ICharacter& target)
+{
+	std::cout << "* heals " << target.getName() << "’s wounds *" << std::endl;
+}

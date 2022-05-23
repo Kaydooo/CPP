@@ -15,8 +15,8 @@
 	}
 	Point	&Point::operator=(const Point &rhs)
 	{
-		(Fixed)x = rhs.x;
-    	(Fixed)y = rhs.y;
+		*((Fixed*)(&x)) = rhs.x;
+    	*((Fixed*)(&y)) = rhs.y;
 		return (*this);
 
 	}

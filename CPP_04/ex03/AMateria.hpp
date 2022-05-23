@@ -2,8 +2,7 @@
 # define AMATERIA_HPP
 
 # include <iostream>
-
-
+# include "ICharacter.hpp"
 #define RED "\033[0;31m"
 #define GREEN "\033[1;32m"
 #define CYAN "\033[0;36m"
@@ -16,15 +15,15 @@ class AMateria
 public:
 
 // ----------------------------- Constructors ------------------------------ //
-	AMateria();	// Default Constructor
+	// AMateria();	// Default Constructor
 	//AMateria(const AMateria& c);	// Copy Constructor
 	AMateria(std::string const & type);
-	AMateria(const AMateria& c);
+	// AMateria(const AMateria& c);
 // ------------------------------ Destructor ------------------------------- //
 	virtual ~AMateria() = 0;	// Destructor
 
 // ------------------------------- Operators ------------------------------- //
-	AMateria & operator=(const AMateria& a);
+//	AMateria & operator=(const AMateria& a);
 	// Copy Assignement Operator
 
 // --------------------------- Getters && Setters -------------------------- //

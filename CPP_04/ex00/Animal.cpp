@@ -3,37 +3,39 @@
 // ----------------------------- Constructors ------------------------------ //
 Animal::Animal()
 {
-	_ANIMAL_AUTO(32, "Default Constructor");
+	std::cout << GREEN << "Default Constructor Called Animal()" << RESET << std::endl;
+
+
 }
 
 Animal::Animal(const Animal& c)
 {
-	_ANIMAL_AUTO(32, "Copy Constructor");
 	Type = c.get_Type();
+	std::cout << GREEN << "Copy Constructor Called Animal()" << RESET << std::endl;
 }
 
 Animal::Animal(std::string in_Type) : Type(in_Type)
 {
-	_ANIMAL_AUTO(32, "Fields Constructor");
+	std::cout << GREEN << "String Constructor Called Animal(std::string in_Type)" << RESET << std::endl;
 }
 
 // ------------------------------ Destructor ------------------------------- //
 Animal::~Animal()
 {
-	_ANIMAL_AUTO(31, "Destructor called");
+	std::cout << RED << "Destructor Called ~Animal()" << RESET << std::endl;
 }
 // ------------------------------- Operators ------------------------------- //
 
 Animal & Animal::operator=(const Animal& c)
 {
 	Type = c.get_Type();
+	std::cout << GREEN << "Copy Assignment Operator Animal()" << RESET << std::endl;
 	return *this;
 }
 
 // --------------------------- Getters && Setters -------------------------- //
 std::string Animal::get_Type() const{ return Type; }
 void Animal::set_Type(std::string input){ Type = input; }
-
 
 
 // --------------------------------- Methods ------------------------------- //

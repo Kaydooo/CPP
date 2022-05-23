@@ -1,8 +1,13 @@
 #ifndef CHARACTER_HPP
 # define CHARACTER_HPP
-#include "ICharacter.hpp"
+# include "ICharacter.hpp"
 
-class AMateria;
+#define RED "\033[0;31m"
+#define GREEN "\033[1;32m"
+#define CYAN "\033[0;36m"
+#define YELLOW "\033[1;33m"
+#define RESET "\033[0m"
+
 class Character : public ICharacter
 {
 public:
@@ -21,6 +26,8 @@ public:
 
 // --------------------------- Getters && Setters -------------------------- //
 	std::string const & getName() const;
+	AMateria const		*getInv(int idx) const;
+	AMateria const		*getGnd(int idx) const;
 
 // --------------------------------- Methods ------------------------------- //
 	void equip(AMateria* m);
@@ -28,8 +35,7 @@ public:
 	void use(int idx, ICharacter& target);
 private:
 	AMateria *inventory[4];
-	AMateria *ground[100];
-	int	count;
+	AMateria *ground[1000];
 	int count_ground;
 	std::string name;
 

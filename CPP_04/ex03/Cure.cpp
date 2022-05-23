@@ -1,28 +1,30 @@
 #include "Cure.hpp"
-#include "ICharacter.hpp"
 // ----------------------------- Constructors ------------------------------ //
-Cure::Cure()
+Cure::Cure():AMateria("cure")
 {
+	std::cout << GREEN << "Cure() Constructor Called" << RESET << std::endl;
 	type = "cure";
 
 }
 
-Cure::Cure(const Cure& c):AMateria()
+Cure::Cure(const Cure& c):AMateria("cure")
 {
 	*this = c;
+	std::cout << GREEN << "Cure() Copy Constructor Called" << RESET << std::endl;
 
 }
 
 // ------------------------------ Destructor ------------------------------- //
 Cure::~Cure()
 {
-
+	std::cout << GREEN << "Cure() Destrcutor Called" << RESET << std::endl;
 }
 // ------------------------------- Operators ------------------------------- //
 
 Cure & Cure::operator=(const Cure& c)
 {
-	*this = c;
+	type = c.getType();
+	std::cout << RED << "Cure() Copy Assginemnt Operator Called" << RESET << std::endl;
 	return *this;
 }
 

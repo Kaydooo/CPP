@@ -3,9 +3,17 @@
 
 # include <iostream>
 
+#define RED "\033[0;31m"
+#define GREEN "\033[1;32m"
+#define CYAN "\033[0;36m"
+#define YELLOW "\033[1;33m"
+#define RESET "\033[0m"
+
 class Animal
 {
 public:
+	
+
 // ----------------------------- Constructors ------------------------------ //
 	Animal();	// Default Constructor
 	Animal(std::string in_Type);	// Fields Constructor
@@ -30,26 +38,4 @@ protected:
 	std::string Type;
 
 };
-
-# ifndef NO_DEBUG
-
-#  ifndef _ARG
-#   define _ARG(arg) #arg << "(" << arg << ") "
-#  endif /* _ARG */
-
-#  define _ANIMAL_ARGS _ARG(Type)
-#  define _ANIMAL_AUTO(COLOR_CODE, TEXT) \
-	std::cout << "{ \e[" << COLOR_CODE << ";1m"                 \
-			  << TEXT << " " << __PRETTY_FUNCTION__ << "\e[0m " \
-			  << "[\033[34;47m" << this                         \
-			  << "\033[0m]\033[0m: " << _ANIMAL_ARGS  \
-			  << "}" << std::endl;
-# else
-
-#  define _ANIMAL_AUTO(x, y) ;
-#  define _ANIMAL_ARGS ""
-#  define _ARG ""
-
-# endif /* NO_DEBUG */
-
 #endif /* ANIMAL_HPP */

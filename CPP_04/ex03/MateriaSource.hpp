@@ -17,13 +17,11 @@ public:
 	// Copy Assignement Operator
 
 // --------------------------- Getters && Setters -------------------------- //
-	AMateria *getLearn(int index);
 // --------------------------------- Methods ------------------------------- //
 	void learnMateria(AMateria*);
 	AMateria* createMateria(std::string const & type);
 private:
 	AMateria *learned[4];
-	int	count;
 
 };
 

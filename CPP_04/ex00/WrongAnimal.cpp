@@ -1,32 +1,33 @@
 #include "WrongAnimal.hpp"
-
 // ----------------------------- Constructors ------------------------------ //
 WrongAnimal::WrongAnimal()
 {
-	_WRONGANIMAL_AUTO(32, "Default Constructor");
+	std::cout << GREEN << "Default Constructor Called WrongAnimal()" << RESET << std::endl;
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal& c)
 {
-	_WRONGANIMAL_AUTO(32, "Copy Constructor");
 	Type = c.get_Type();
+	std::cout << GREEN << "Copy Constructor Called WrongAnimal()" << RESET << std::endl;
+
 }
 
 WrongAnimal::WrongAnimal(std::string in_Type) : Type(in_Type)
 {
-	_WRONGANIMAL_AUTO(32, "Fields Constructor");
+	std::cout << GREEN << "String Constructor Called WrongAnimal(std::string in_Type)" << RESET << std::endl;
 }
 
 // ------------------------------ Destructor ------------------------------- //
 WrongAnimal::~WrongAnimal()
 {
-	_WRONGANIMAL_AUTO(31, "Destructor called");
+	std::cout << RED << "Destructor Called ~WrongAnimal()" << RESET << std::endl;
 }
 // ------------------------------- Operators ------------------------------- //
 
 WrongAnimal & WrongAnimal::operator=(const WrongAnimal& c)
 {
 	Type = c.get_Type();
+	std::cout << GREEN << "Copy Assignment Operator WrongAnimal()" << RESET << std::endl;
 	return *this;
 }
 

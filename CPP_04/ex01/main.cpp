@@ -38,5 +38,14 @@ std::cout << dog.get_Type() << " " << std::endl;
 std::cout << meta->get_Type() << " " << std::endl;
 std::cout << cat->get_Type() << " " << std::endl; */
 
+WrongAnimal* wc = new WrongCat();
+Animal *test = new Cat();
+wc->makeSound();
+test->makeSound();
+
+delete wc;
+delete test;
+
+
 return 0;
 }

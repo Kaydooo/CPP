@@ -26,7 +26,6 @@ public:
 	// Copy Assignement Operator
 
 // --------------------------- Getters && Setters -------------------------- //
-	
 
 // --------------------------------- Methods ------------------------------- //
 	void	makeSound()const;

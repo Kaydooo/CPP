@@ -17,7 +17,6 @@ Animal::Animal(const Animal& c)
 Animal::Animal(std::string in_Type) : Type(in_Type)
 {
 	std::cout << GREEN << "String Constructor Called Animal(std::string in_Type)" << RESET << std::endl;
-
 }
 
 // ------------------------------ Destructor ------------------------------- //
@@ -31,6 +30,7 @@ Animal::~Animal()
 Animal & Animal::operator=(const Animal& c)
 {
 	Type = c.get_Type();
+	std::cout << GREEN << "Copy Assignment Operator Animal()" << RESET << std::endl;
 	return *this;
 }
 

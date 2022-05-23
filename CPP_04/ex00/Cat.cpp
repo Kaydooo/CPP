@@ -1,33 +1,35 @@
-#include "../includes/Cat.hpp"
+#include "Cat.hpp"
 
 // ----------------------------- Constructors ------------------------------ //
 Cat::Cat()
 {
 	Type = "Cat";
-	_CAT_AUTO(32, "Default Constructor");
+	std::cout << GREEN << "Default Constructor Called Cat()" << RESET << std::endl;
 }
 
 Cat::Cat(const Cat& c)
 {
 	Type = c.get_Type();
-	_CAT_AUTO(32, "Copy Constructor");
+	std::cout << GREEN << "Copy Constructor Called Cat()" << RESET << std::endl;
+
 }
 
 Cat::Cat(std::string in_Type): Animal(in_Type)
 {
-	_CAT_AUTO(32, "Fields Constructor");
+	std::cout << GREEN << "Field Constructor Called Cat()" << RESET << std::endl;
 }
 
 // ------------------------------ Destructor ------------------------------- //
 Cat::~Cat()
 {
-	_CAT_AUTO(31, "Destructor called");
+	std::cout << RED << "Destructor Called Cat()" << RESET << std::endl;
 }
 // ------------------------------- Operators ------------------------------- //
 
 Cat & Cat::operator=(const Cat& c)
 {
 	Type = c.get_Type();
+	std::cout << GREEN << "Copy Assignment Operator Called Cat()" << RESET << std::endl;
 	return *this;
 }
 

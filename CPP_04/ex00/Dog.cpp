@@ -4,30 +4,31 @@
 Dog::Dog()
 {
 	Type = "Dog";
-	_DOG_AUTO(32, "Default Constructor");
+	std::cout << GREEN << "Default Constructor Called Dog()" << RESET << std::endl;
 }
 
 Dog::Dog(const Dog& c)
 {
 	Type = c.get_Type();
-	_DOG_AUTO(32, "Copy Constructor");
+	std::cout << GREEN << "Copy Constructor Called Dog()" << RESET << std::endl;
 }
 
 Dog::Dog(std::string in_Type): Animal(in_Type)
 {
-	_DOG_AUTO(32, "Fields Constructor");
+	std::cout << GREEN << "Field Constructor Called Dog()" << RESET << std::endl;
 }
 
 // ------------------------------ Destructor ------------------------------- //
 Dog::~Dog()
 {
-	_DOG_AUTO(31, "Destructor called");
+	std::cout << RED << "Destructor Called Dog()" << RESET << std::endl;
 }
 // ------------------------------- Operators ------------------------------- //
 
 Dog & Dog::operator=(const Dog& c)
 {
 	Type = c.get_Type();
+	std::cout << GREEN << "Copy Assignment Operator Called Dog()" << RESET << std::endl;
 	return *this;
 }
 

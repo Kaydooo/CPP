@@ -1,33 +1,34 @@
 #include "WrongCat.hpp"
-
+	
 // ----------------------------- Constructors ------------------------------ //
 WrongCat::WrongCat()
 {
-	_WRONGCAT_AUTO(32, "Default Constructor");
 	Type = "WrongCat";
+	std::cout << GREEN << "Default Constructor Called WrongCat()" << RESET << std::endl;
 }
 
-WrongCat::WrongCat(const WrongCat& c)
+WrongCat::WrongCat(const WrongCat& c): WrongAnimal()
 {
-	_WRONGCAT_AUTO(32, "Copy Constructor");
 	Type = c.get_Type();
+	std::cout << GREEN << "Copy Constructor Called WrongCat()" << RESET << std::endl;
 }
 
 WrongCat::WrongCat(std::string in_Type): WrongAnimal(in_Type)
 {
-	_WRONGCAT_AUTO(32, "Fields Constructor");
+	std::cout << GREEN << "String Constructor Called WrongCat(std::string in_Type)" << RESET << std::endl;
 }
 
 // ------------------------------ Destructor ------------------------------- //
 WrongCat::~WrongCat()
 {
-	_WRONGCAT_AUTO(31, "Destructor called");
+	std::cout << RED << "Destructor Called ~WrongCat()" << RESET << std::endl;
 }
 // ------------------------------- Operators ------------------------------- //
 
 WrongCat & WrongCat::operator=(const WrongCat& c)
 {
 	Type = c.get_Type();
+	std::cout << GREEN << "Copy Assignment Operator WrongCat()" << RESET << std::endl;
 	return *this;
 }
 

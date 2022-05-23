@@ -3,13 +3,13 @@
 # $@ "include target"
 # $^ "include the full list of prerequisites)"
 
-SRCS = main.cpp src/Animal.cpp src/Cat.cpp src/Dog.cpp src/WrongAnimal.cpp src/WrongCat.cpp
+SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
 CXX = clang++
 
-CXXFLAGS = -Werror -Wall -Wextra -I./includes -std=c++98
+CXXFLAGS = -Werror -Wall -Wextra -g3 -std=c++98
 
 NAME = ex00
 	

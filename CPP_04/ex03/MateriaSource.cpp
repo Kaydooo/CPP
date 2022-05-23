@@ -1,65 +1,81 @@
 #include "MateriaSource.hpp"
 
 // ----------------------------- Constructors ------------------------------ //
-MateriaSource::MateriaSource(): count(0)
+MateriaSource::MateriaSource()
 {
+	for (int i = 0; i < 4; i++)
+	{
+		learned[i] = NULL;
+	}
 	std::cout << GREEN << "MateriaSource() Default Constructor Called" << RESET << std::endl;
 }
 
 MateriaSource::MateriaSource(const MateriaSource& c) 
 {
-	//delete [] learned;
-	for(int i = 0; i < 4 ; i++)
-	{
-		learned[i] = c.learned[i];
-	}
+	*this = c;
+	std::cout << GREEN << "MateriaSource() Copy Constructor Called" << RESET << std::endl;
 }
 
 // ------------------------------ Destructor ------------------------------- //
 MateriaSource::~MateriaSource()
 {
-
+	for(int i = 0; i < 4 ; i++)
+	{
+		if(learned[i])
+			delete learned[i];
+	}
+	std::cout << RED << "MateriaSource() Destructor Called" << RESET << std::endl;
 }
 // ------------------------------- Operators ------------------------------- //
 
 MateriaSource & MateriaSource::operator=(const MateriaSource& c)
 {
-	//delete[] learned;
-	for(int i = 0; i < 4 ; i++)
+	for (int i = 0; i < 4 ; i++)
 	{
-		learned[i] = c.learned[i];
+		if (learned[i])
+			delete learned[i];
+		if (c.learned[i] == NULL)
+			learned[i] = NULL;
+		else
+			learned[i] = c.learned[i]->clone();
 	}
-	return *this;
+	std::cout << GREEN << "MateriaSource() Copy Assignment Operator Called" << RESET << std::endl;
+	return (*this);
 }
 
 // --------------------------- Getters && Setters -------------------------- //
-AMateria *MateriaSource::getLearn(int index)
-{
-	return(learned[index]);
-}
+
 // --------------------------------- Methods ------------------------------- //
 void MateriaSource::learnMateria(AMateria* toLearn)
 {
-	if(count < 4)
+	if (toLearn == NULL)
 	{
-		learned[count] = toLearn;
-		count++;
+		std::cout << "MateriaSource: Couldn't learn empty Materia" << std::endl;
+		return ;
 	}
-	else
+	for (int i = 0; i < 4; i++)
 	{
-		std::cout << "Already Learnt 4 !" << std::endl;
+		if (learned[i] == NULL)
+		{
+			learned[i] = toLearn;
+			std::cout << "Learned " << toLearn->getType() << "at slot no " << i << std::endl;
+			return ;
+		}
 	}
+	std::cout << "Slots are FULL .." << std::endl;
 }
 
 AMateria* MateriaSource::createMateria(std::string const & type)
 {
-	for(int i = 0; i < count ; i++)
+	for (int i = 0; i < 4; i++)
 	{
-		if(!(learned[i]->getType().compare(type)))
+		if (learned[i] == NULL)
+			continue ;
+		if (learned[i]->getType() == type)
 		{
-			return learned[i];
+			return (learned[i]->clone());
 		}
 	}
-	std::cout << "AMateria Not Learned yet !" << std::endl;
-	return NULL;
+	std::cout << "Unknown type" << std::endl;
+	return (NULL);
 }

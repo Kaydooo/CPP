@@ -2,39 +2,25 @@
 #include "ICharacter.hpp"
 
 // ----------------------------- Constructors ------------------------------ //
-AMateria::AMateria()
+
+AMateria::AMateria(std::string const &type) : type(type)
 {
-	type = "No Type";
+	std::cout << GREEN << "Materia type: " << type << " constructed" << RESET << std::endl;
+	return ;
 }
 
-AMateria::AMateria(const AMateria& c)
-{
-	type = c.getType();
-}
-
-// ------------------------------ Destructor ------------------------------- //
 AMateria::~AMateria()
 {
-}
-// ------------------------------- Operators ------------------------------- //
-
-AMateria & AMateria::operator=(const AMateria& c)
-{
-	type = c.getType();
-	return *this;
+	std::cout << RED << "AMateria Destrcutor Called" << RESET << std::endl;
+	return ;
 }
 
-// --------------------------- Getters && Setters -------------------------- //
-
-std::string const & AMateria::getType() const
+std::string const	&AMateria::getType(void) const
 {
 	return (type);
 }
 
-// --------------------------------- Methods ------------------------------- //
-
 void	AMateria::use(ICharacter& target)
 {
-	// std::cout << "* Default use on  " << target.getName() << " *" << std::endl;
-	std::cout << "* use " << " for " << target.getName() << " *" << std::endl;
+	std::cout << "*Default use " << " on " << target.getName() << " *" << std::endl;
 }

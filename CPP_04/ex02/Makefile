@@ -3,7 +3,7 @@
 # $@ "include target"
 # $^ "include the full list of prerequisites)"
 
-SRCS = main.cpp src/Animal.cpp src/Cat.cpp src/Dog.cpp src/WrongAnimal.cpp src/WrongCat.cpp src/Brain.cpp
+SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 

@@ -8,7 +8,7 @@ Ice::Ice()
 
 Ice::Ice(const Ice& c):AMateria()
 {
-	*this = c;
+	
 }
 
 // ------------------------------ Destructor ------------------------------- //

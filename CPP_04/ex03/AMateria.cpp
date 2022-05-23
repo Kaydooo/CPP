@@ -9,29 +9,27 @@ AMateria::AMateria()
 
 AMateria::AMateria(const AMateria& c)
 {
-	*this = c;
-	
+	type = c.getType();
 }
 
-std::string const & AMateria::getType() const
-{
-	return (type);
-}
 // ------------------------------ Destructor ------------------------------- //
 AMateria::~AMateria()
 {
-
 }
 // ------------------------------- Operators ------------------------------- //
 
 AMateria & AMateria::operator=(const AMateria& c)
 {
-	type = c.type;
+	type = c.getType();
 	return *this;
 }
 
 // --------------------------- Getters && Setters -------------------------- //
 
+std::string const & AMateria::getType() const
+{
+	return (type);
+}
 
 // --------------------------------- Methods ------------------------------- //
 

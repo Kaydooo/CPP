@@ -40,6 +40,5 @@ dog.makeSound();
 std::cout << dog.get_Type() << " " << std::endl;
 std::cout << meta->get_Type() << " " << std::endl;
 std::cout << cat->get_Type() << " " << std::endl; */
-
 	return 0;
 }

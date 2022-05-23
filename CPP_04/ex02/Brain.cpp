@@ -3,21 +3,23 @@
 // ----------------------------- Constructors ------------------------------ //
 Brain::Brain()
 {
-	_BRAIN_AUTO(32, "Default Constructor");
+	std::cout << GREEN << "Default Constructor Called Brain()" << RESET << std::endl;
+
 }
 
 Brain::Brain(const Brain& c)
 {
 	for(int i = 0; i < 100 ; i++)
 		ideas[i] = c.get_ideas(i);
-	_BRAIN_AUTO(32, "Copy Constructor");
+	std::cout << GREEN << "Copy Constructor Called Brain(const Brain& c)" << RESET << std::endl;
 }
 
 
 // ------------------------------ Destructor ------------------------------- //
 Brain::~Brain()
 {
-	_BRAIN_AUTO(31, "Destructor called");
+	std::cout << RED << "Destructor Called ~Brain()" << RESET << std::endl;
+
 }
 // ------------------------------- Operators ------------------------------- //
 

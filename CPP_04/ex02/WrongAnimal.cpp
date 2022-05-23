@@ -3,24 +3,20 @@
 // ----------------------------- Constructors ------------------------------ //
 WrongAnimal::WrongAnimal()
 {
-	_WRONGANIMAL_AUTO(32, "Default Constructor");
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal& c)
 {
-	_WRONGANIMAL_AUTO(32, "Copy Constructor");
 	Type = c.get_Type();
 }
 
 WrongAnimal::WrongAnimal(std::string in_Type) : Type(in_Type)
 {
-	_WRONGANIMAL_AUTO(32, "Fields Constructor");
 }
 
 // ------------------------------ Destructor ------------------------------- //
 WrongAnimal::~WrongAnimal()
 {
-	_WRONGANIMAL_AUTO(31, "Destructor called");
 }
 // ------------------------------- Operators ------------------------------- //
 

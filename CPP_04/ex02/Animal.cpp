@@ -3,24 +3,28 @@
 // ----------------------------- Constructors ------------------------------ //
 Animal::Animal()
 {
-	_ANIMAL_AUTO(32, "Default Constructor");
+	std::cout << GREEN << "Default Constructor Called Animal()" << RESET << std::endl;
+
 }
 
 Animal::Animal(const Animal& c)
 {
-	_ANIMAL_AUTO(32, "Copy Constructor");
+	std::cout << GREEN << "Copy Constructor Called Animal()" << RESET << std::endl;
+
 	Type = c.get_Type();
 }
 
 Animal::Animal(std::string in_Type) : Type(in_Type)
 {
-	_ANIMAL_AUTO(32, "Fields Constructor");
+	std::cout << GREEN << "String Constructor Called Animal(std::string in_Type)" << RESET << std::endl;
+
 }
 
 // ------------------------------ Destructor ------------------------------- //
 Animal::~Animal()
 {
-	_ANIMAL_AUTO(31, "Destructor called");
+	std::cout << RED << "Destructor Called ~Animal()" << RESET << std::endl;
+
 }
 // ------------------------------- Operators ------------------------------- //
 
@@ -38,4 +42,4 @@ void Animal::set_Type(std::string input){ Type = input; }
 
 // --------------------------------- Methods ------------------------------- //
 
-void	Animal::makeSound() const{std::cout << "no sound.." << std::endl;}
+void	Animal::makeSound() const{std::cout << "Unknown Sound.." << std::endl;}

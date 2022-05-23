@@ -3,6 +3,12 @@
 
 # include <iostream>
 
+#define RED "\033[0;31m"
+#define GREEN "\033[1;32m"
+#define CYAN "\033[0;36m"
+#define YELLOW "\033[1;33m"
+#define RESET "\033[0m"
+
 class Brain
 {
 public:
@@ -31,26 +37,5 @@ private:
 	std::string ideas[100];
 
 };
-
-# ifndef NO_DEBUG
-
-#  ifndef _ARG
-#   define _ARG(arg) #arg << "(" << arg << ") "
-#  endif /* _ARG */
-
-#  define _BRAIN_ARGS _ARG(ideas)
-#  define _BRAIN_AUTO(COLOR_CODE, TEXT) \
-	std::cout << "{ \e[" << COLOR_CODE << ";1m"                 \
-			  << TEXT << " " << __PRETTY_FUNCTION__ << "\e[0m " \
-			  << "[\033[34;47m" << this                         \
-			  << "\033[0m]\033[0m: " << _BRAIN_ARGS  \
-			  << "}" << std::endl;
-# else
-
-#  define _BRAIN_AUTO(x, y) ;
-#  define _BRAIN_ARGS ""
-#  define _ARG ""
-
-# endif /* NO_DEBUG */
 
 #endif /* BRAIN_HPP */

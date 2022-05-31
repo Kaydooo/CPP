@@ -1,32 +1,22 @@
 
-#include "Serialize.hpp"
+#include "A.hpp"
+#include "B.hpp"
+#include "C.hpp"
+#include <stdlib.h>
+#include<time.h>
 
-uintptr_t serialize(Data* ptr)
+Base * generate(void)
 {
-    return(reinterpret_cast<uintptr_t> (ptr));
+   std::srand(time(0));
+   int num = std::rand() % 3;
+   std::cout << num << std::endl;
+    return(new Base);
 }
-Data* deserialize(uintptr_t raw)
-{
-
-    return(reinterpret_cast<Data*> (raw));
-}
+void identify(Base* p);
+void identify(Base& p);
 
 int main()
 {
-    Data *test_struct;
-    test_struct = new Data;
-    test_struct->dnum = 4.40;
-    test_struct->fnum = 4.50f;
-    test_struct->num = 2000;
-    test_struct->str = "KAYDOOOOOO";
-
-    Data	*test_struct2 = deserialize(serialize(test_struct));
-    //test_struct = deserialize(serialize(test_struct));
-
-    std::cout << "int = " << test_struct2->num << std::endl;
-    std::cout << "float = " << test_struct2->fnum << std::endl;
-    std::cout << "double = " << test_struct2->dnum << std::endl;
-    std::cout << "string = " << test_struct2->str << std::endl;
-    
+	generate();
     return (0);
 }

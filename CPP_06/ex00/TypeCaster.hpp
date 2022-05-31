@@ -38,8 +38,8 @@ public:
 	void	printNumbers();
 
 
-	TypeCaster();	// Default Constructor
 private:
+	TypeCaster();	// Default Constructor
 	void	setType();
 	void	printC();
 	void	printI();

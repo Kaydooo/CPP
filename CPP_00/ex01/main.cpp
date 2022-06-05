@@ -6,13 +6,13 @@
 /*   By: mal-guna <mal-guna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 09:28:43 by mal-guna          #+#    #+#             */
-/*   Updated: 2022/03/13 01:50:17 by mal-guna         ###   ########.fr       */
+/*   Updated: 2022/06/05 23:09:55 by mal-guna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-int	search(PhoneBook *phonebook)
+/* int	search(PhoneBook *phonebook)
 {
 	std::string input;
 	int index;
@@ -39,8 +39,7 @@ int	search(PhoneBook *phonebook)
 	index = atoi(input.c_str());
 	phonebook->print_contact(index);
 	return (0);
-
-}
+} */
 void	add_contact(PhoneBook *phonebook)
 {
 	std::string info[5];
@@ -73,14 +72,13 @@ int main()
 	std::cout << "Enter One of the following Commands [ADD, SEARCH, EXIT]" << std::endl;
 	std::cout << "-------------------------------------------------------" << std::endl;
 	
-	while(1)
+	while(std::getline (std::cin, input))
 	{
-		std::getline (std::cin, input);
 		if(!input.compare("ADD"))
 			add_contact(&phonebook);
 		else if(!input.compare("SEARCH"))
 		{
-			if(search(&phonebook))
+			if(phonebook.search())
 				return (0);
 		}	
 		else if(!input.compare("EXIT"))

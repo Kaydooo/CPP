@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dfurneau <dfurneau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mal-guna <mal-guna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/03 09:30:31 by mal-guna          #+#    #+#             */
-/*   Updated: 2022/06/05 22:56:05 by dfurneau         ###   ########.fr       */
+/*   Created: 2022/06/05 23:00:44 by dfurneau          #+#    #+#             */
+/*   Updated: 2022/06/05 23:03:23 by mal-guna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+
 
 #include <iostream>
 

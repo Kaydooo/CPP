@@ -38,7 +38,7 @@ public:
 	void	incGrade();
 	void	decGrade();
 	void	signForm(Form&);
-// --------------------------------- Exception class ------------------------------- //
+
 	class GradeTooHighException: public std::exception
 	{
 		const char* what() const throw();

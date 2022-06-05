@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mal-guna <mal-guna@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dfurneau <dfurneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 09:30:31 by mal-guna          #+#    #+#             */
-/*   Updated: 2022/03/03 09:39:34 by mal-guna         ###   ########.fr       */
+/*   Updated: 2022/06/05 22:56:05 by dfurneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,18 @@
 int main(int ac, char **argv)
 {
 	int i = 1;
-	int j = 0;
-
+	std::string	str;
+	
 	if (ac == 1)
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
 	else
 	{
 		while(argv[i])
 		{
-			j = 0;
-			while(argv[i][j])
+			str = argv[i];
+			for (size_t j = 0; j < str.length(); j++)
 			{
-				if(argv[i][j] >= 97 && argv[i][j] <= 122)
-					std::cout << (char)(argv[i][j] - 32);
-				else
-					std::cout << (char)(argv[i][j]);
-				j++;
+				std::cout << static_cast<char> (std::toupper(str[j]));
 			}
 			i++;
 		}
@@ -38,3 +34,4 @@ int main(int ac, char **argv)
 	}
 	return (0);
 }
+

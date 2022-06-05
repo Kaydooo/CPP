@@ -1,21 +1,56 @@
 #include "iter.hpp"
 
-/* int main( void ) {
+class Animal
+{
+    public:
+        Animal(void){return;}
+        ~Animal(){return;};
+        virtual void makeSound() const = 0;
+};
 
-   std::string names[5];
+class Dog : public Animal
+{
+    public:
+        Dog(void){return;}
+        void   makeSound() const
+        {
+            std::cout << "Wooof Woof" << std::endl;
+        }
+};
 
-    names[0] = "Moatasem";
-    names[1] = "Mohamed";
-    names[2] = "JaJa";
-    names[3] = "Hus";
-    names[4] = "Khalid";
+class Cat : public Animal
+{
+    public:
+        Cat(void){return;}
+        void   makeSound() const
+        {
+            std::cout << "Meowww" << std::endl;
+        }
+};
 
+
+void    callSound(Animal const &an)
+{
+    an.makeSound();
+}
+
+int main( void )
+{
+    std::string names[5] = {"Moatasem", "Mohamed", "JaJa", "Hus", "Khalid"};
     iter<std::string> (names, 5, printElem);
 
+    int numbers[6] = {1, 2, 3, 4, 5, 6};
+    iter<int> (numbers, 5, printElem);
+
+    Cat cats[5];
+    iter<Animal> (cats, 5, callSound);
+
+    Dog dogs[5];
+    iter<Animal> (dogs, 5, callSound);
     return 0;
 }
- */
-class Awesome
+
+/* class Awesome
 {
 public:
 Awesome(void) :_n(42){return;}
@@ -32,9 +67,9 @@ int main()
 {
     int tab[] = {0, 1, 2, 3, 4};
     Awesome tab2[5];
-    iter(tab, 5, print);
-    iter(tab2, 5, print);
+    iter<int>(tab, 5, print);
+    iter<Awesome>(tab2, 5, print);
     std::string names[5];
 
 
-}
+} */

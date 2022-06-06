@@ -45,36 +45,18 @@ void		TypeCaster::setType()
 	if(input.length() == 1)
 	{
 		if(isdigit(input[0]))
-		{
 			type = I_I;
-			std::cout << "its digit !" << std::endl;
-		}
 		else
-		{
 			type = I_C;
-			std::cout << "its char !" << std::endl;
-		}
 	}
 	else if(!input.compare("nan") || !input.compare("+inf") || !input.compare("-inf") )
-	{
 		type = I_D;
-		std::cout << "its double" << std::endl;
-	}
 	else if(input[input.length() - 1] == 'f')
-	{
-		std::cout << "its float !" << std::endl;
 		type = I_F;
-	}
 	else if(input.find(".") != std::string::npos)
-	{
 		type = I_D;
-		std::cout << "its double" << std::endl;
-	}
 	else
-	{
 		type = I_I;
-		std::cout << "Its Int " << std::endl;
-	}
 }
 
 void	TypeCaster::printNumbers()

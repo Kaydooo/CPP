@@ -3,46 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mal-guna <mal-guna@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mal-guna <m3t9mm@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 09:28:43 by mal-guna          #+#    #+#             */
-/*   Updated: 2022/06/05 23:09:55 by mal-guna         ###   ########.fr       */
+/*   Updated: 2022/06/06 17:00:02 by mal-guna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-/* int	search(PhoneBook *phonebook)
-{
-	std::string input;
-	int index;
-	phonebook->view_contact_table();
-	std::cout << "Chose an index to print:";
-	std::getline (std::cin, input);
-	if(std::cin.eof() == 1)
-	{
-		std::cout << "Ctrl D detected, Exiting the program ...." << std::endl;
-		return 1;
-	}
-	if(input.size() == 0 || input.size() > 1)
-	{
-		std::cout << "Wrong Index !!" << std::endl;
-		return 0;
-	}
-	for(int j = 0; j < (int)input.size() ;j++)
-	{
-		if(!isdigit(input[j]))
-		{	std::cout << "Wrong Index !!" << std::endl;
-			return 0;	
-		}
-	}
-	index = atoi(input.c_str());
-	phonebook->print_contact(index);
-	return (0);
-} */
-void	add_contact(PhoneBook *phonebook)
+static void	subMenu(PhoneBook *phonebook)
 {
 	std::string info[5];
+	int			err;
 
 	std::cout << "Enter First Name : ";
 	std::getline (std::cin, info[0]);
@@ -56,7 +29,13 @@ void	add_contact(PhoneBook *phonebook)
 	std::getline (std::cin, info[4]);
 	for(int i = 0; i<5; i++)
 	{
-		if(info[i].size() == 0)
+		err = 1;
+		for(size_t j = 0; j < info[i].length(); j++)
+		{
+			if(!isspace(info[i][j]))
+				err = 0;
+		}
+		if(info[i].size() == 0 || err)
 		{
 			std::cout << "You have 1 empty input" << std::endl;
 			return ;
@@ -74,8 +53,8 @@ int main()
 	
 	while(std::getline (std::cin, input))
 	{
-		if(!input.compare("ADD"))
-			add_contact(&phonebook);
+		if(input == "ADD")
+			subMenu(&phonebook);
 		else if(!input.compare("SEARCH"))
 		{
 			if(phonebook.search())
@@ -89,7 +68,8 @@ int main()
 			return (0);
 		}
 		else
-			std::cout << "Wrong Command.. The program only accepts ADD, SEARCH and EXIT" << std::endl;
+			std::cout << "Wrong Command.. ";
+	std::cout << "Enter One of the following Commands [ADD, SEARCH, EXIT]" << std::endl;
 	}
 	return (0);
 }

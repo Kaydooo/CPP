@@ -1,83 +1,84 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Span.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mal-guna <mal-guna@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/11 04:39:06 by mal-guna          #+#    #+#             */
+/*   Updated: 2022/06/11 04:39:07 by mal-guna         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 # include "Span.hpp"
 
-
 // ----------------------------- Constructors ------------------------------ //
-Span::Span(unsigned int size)
+Span::Span(unsigned int size):N(size)
 {
-	this->N = size;
+	this->intArray.reserve(N);
 }
-Span::Span(const Span &src)
+Span::Span(const Span &src): N(src.N)
 {
-	this->N = src.N;
-	this->intArray = src.intArray;
+	intArray.resize(N);
+	std::copy(src.intArray.begin(), src.intArray.end(), this->intArray.begin());
 }
 // ------------------------------ Destructor ------------------------------- //
 Span::~Span()
 {
 }
 // ------------------------------- Operators ------------------------------- //
-Span	&Span::operator=(Span& rhs)
+Span	&Span::operator=(Span rhs)
 {
-	if(this != &rhs)
-	{
-		rhs.intArray.resize(this->N);
-		rhs.N = this->N;
-		for(unsigned int i = 0; i < this->N; i++)
-		{
-			rhs.intArray[i] = this->intArray[i];
-		}
-	}
+	swap(*this, rhs);
 	return *this;
 }
 // --------------------------------- Methods ------------------------------- //
 void	Span::addNumber(int number)
 {
 	if(intArray.size() >= N)
-		throw VectorIsFullException();
-	
+		throw NoEnoughSpaceInVector();
 	intArray.push_back(number);
+}
+
+void	Span::addNumber(std::vector<int>::iterator bg, std::vector<int>::iterator en)
+{
+	if(static_cast<size_t> (en - bg) > (this->N - this->intArray.size()))
+		throw NoEnoughSpaceInVector();
+	for(std::vector<int>::iterator start = bg; start != en; start++)
+		intArray.push_back(*start);
 }
 
 void	Span::printVec() const
 {
-	std::vector<int>::const_iterator it;
-	for(it = intArray.begin(); it != intArray.end(); ++it)
+	
+	for(std::vector<int>::const_iterator it = intArray.begin(); it != intArray.end(); it++)
 		std::cout << *it << std::endl;
 }
 
-int		Span::max() const
-{
-	return(*(std::max_element(intArray.begin(), intArray.end())));
-}
-int		Span::min() const
-{
-	return(*(std::min_element(intArray.begin(), intArray.end())));
-}
+int		Span::max() const{return(*(std::max_element(intArray.begin(), intArray.end())));}
+int		Span::min() const{return(*(std::min_element(intArray.begin(), intArray.end())));}
 
 int		Span::longestSpan() const
 {
 	if(intArray.size() == 0 || intArray.size() == 1 )
 		throw NoSpanFoundException();
-
 	return(max() - min());
 }
+
 int		Span::shortestSpan() const
 {
-	// std::cout << "size is = " << intArray.size() << " ";
 	if(intArray.size() == 0 || intArray.size() == 1 )
 		throw NoSpanFoundException();
 	std::vector<int> temp(intArray);
 	std::sort(temp.begin(), temp.end());
-	
-	// int x1 = temp[temp.size() - 1] - temp[temp.size() - 2];
-	// int x2 = temp[1] - temp[0];
-	// std::cout << "X1 = " << x1 << std::endl;
-	// std::cout << "X2 = " << x2 << std::endl;
-	int smallest = temp[1] - temp[0];
-	for(unsigned int i = 0; i < intArray.size() - 1; i++)
+	std::vector<int>::const_iterator it = temp.begin();
+	int smallest = *(it + 1) - *it;
+	for(it = temp.begin(); it != temp.end(); ++it)
 	{
-		int a = temp[i + 1] - temp[i];
+		if((it+1) == temp.end())
+			continue;
+		int a = *(it + 1) - *it;
 		if(a < smallest)
 			smallest = a;
 	}
@@ -86,12 +87,18 @@ int		Span::shortestSpan() const
 
 // --------------------------- Getters && Setters -------------------------- //
 
+std::vector<int> &Span::getVec(){return this->intArray;}
+unsigned int	&Span::getSize(){return this->N;}
+
 // --------------------------------- Exception class ------------------------------- //
-const char* Span::VectorIsFullException::what() const throw()
+
+const char* Span::NoEnoughSpaceInVector::what() const throw(){return "No Enough Space !";}
+const char* Span::NoSpanFoundException::what() const throw(){return "No Span Possible !";}
+
+/* Freind Functions */
+
+void swap(Span& first, Span& second)
 {
-	return "Vector is full !";
-}
-const char* Span::NoSpanFoundException::what() const throw()
-{
-	return "No Span !";
+	std::swap(first.getSize(), second.getSize());
+	std::swap(first.getVec(), second.getVec());
 }

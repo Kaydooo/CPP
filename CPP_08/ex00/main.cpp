@@ -1,23 +1,45 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mal-guna <mal-guna@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/11 04:39:20 by mal-guna          #+#    #+#             */
+/*   Updated: 2022/06/11 04:39:21 by mal-guna         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "easyfind.hpp"
 #include <vector>
+#include <list>
 
 int main() 
 {
-    std::vector<int> g1;
+    std::vector<int> v1;
+    std::list<int> l1;
+    
     for (int i = 1; i <= 5; i++)
-        g1.push_back(i);
-    int num = 3;
+        v1.push_back(i);
+    for (int i = 1; i <= 5; i++)
+        l1.push_back(i);
+    int num = 55;
     try
     {
-        std::vector<int>::iterator it = easyfind(g1, num);
-        std::cout << *it << std::endl;
+        easyfind(v1, num);
     }
     catch (std::exception &e)
     {
-        std::cout << e.what() << std::endl;
+        std::cout << CYAN << "Vector : " << e.what() << RESET << std::endl;
+    }
+    try
+    {
+        easyfind(l1, num);
+    }
+    catch (std::exception &e)
+    {
+        std::cout << GREEN << "List : " << e.what() << RESET << std::endl;
     }
     
-    // std::vector<int>::iterator
-    // std::cout << "Output is ---> " << easyfind<int>(g1, 5) << std::endl;
     return 0;
 }

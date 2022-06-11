@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Span.hpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mal-guna <mal-guna@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/11 04:39:03 by mal-guna          #+#    #+#             */
+/*   Updated: 2022/06/11 04:39:04 by mal-guna         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef SPAN_HPP
 # define SPAN_HPP
 
@@ -22,10 +34,11 @@ public:
 // ------------------------------ Destructor ------------------------------- //
 	~Span(void);
 // ------------------------------- Operators ------------------------------- //
-	Span	&operator=(Span&);
+Span	&operator=(Span);
 // --------------------------------- Methods ------------------------------- //
 	void	printVec(void) const;
 	void	addNumber(int);
+	void	addNumber(std::vector<int>::iterator, std::vector<int>::iterator);
 	int		max(void) const;
 	int		min(void) const;
 	int		longestSpan(void) const;
@@ -33,9 +46,10 @@ public:
 
 
 // --------------------------- Getters && Setters -------------------------- //
-
+	std::vector<int> &getVec();
+	unsigned int	&getSize();
 // --------------------------------- Exception class ------------------------------- //
-	class VectorIsFullException: public std::exception
+	class NoEnoughSpaceInVector: public std::exception
 	{
 		const char* what() const throw();
 	};
@@ -51,6 +65,7 @@ private:
 	std::vector<int> intArray;
 	Span(void);
 };
+void swap(Span& first, Span& second);
 
 
 #endif /* SPAN_HPP */

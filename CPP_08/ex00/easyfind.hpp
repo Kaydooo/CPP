@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mal-guna <mal-guna@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/11 04:39:18 by mal-guna          #+#    #+#             */
+/*   Updated: 2022/06/11 04:39:19 by mal-guna         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef EASYFIND_HPP
 # define EASYFIND_HPP
 
@@ -5,23 +17,25 @@
 # include <exception>
 # include <algorithm>
 
+#define RED "\033[0;31m"
+#define GREEN "\033[1;32m"
+#define CYAN "\033[0;36m"
+#define YELLOW "\033[1;33m"
+#define RESET "\033[0m"
 class NumberNotFoundException : public std::exception
 {
-	const char* what() const throw(){return "Not Found !";}
+	const char* what() const throw(){return "Element Not Found !";}
 };
 
-
 template<typename T>
-typename	T::iterator	easyfind(T& a, int& b)
+void	easyfind(T& a, int& b)
 { 
 	typename T::iterator it;
-
-	for(it = a.begin() ; it != a.end() ; it++)
-	{
-		if(*it == b)
-			return (it);
-	}
-	throw NumberNotFoundException();
+	it = find (a.begin(), a.end(), b);
+	if (it != a.end())
+		std::cout << "Element found : " << *it << std::endl;
+	else
+		throw NumberNotFoundException();
 	
 }
 

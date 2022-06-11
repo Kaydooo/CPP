@@ -1,31 +1,44 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mal-guna <mal-guna@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/11 04:39:12 by mal-guna          #+#    #+#             */
+/*   Updated: 2022/06/11 04:39:13 by mal-guna         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Span.hpp"
-#include <vector>
 #include <cstdlib>
 #include <ctime>
 
 int main() 
 {
-
     Span a(10000);
     std::srand(time(0));
-    for(int i = 1; i < 10000; i++)
+    for(int i = 0; i < 10000; i++)
         a.addNumber(rand() % 15);
-    // a.addNumber(1);
-    // a.addNumber(6);
-    // a.addNumber(15);
-    // a.addNumber(20);
-    a.printVec();
-
+    std::vector<int> b;
+    b.push_back(20);
+    b.push_back(3);
+    b.push_back(5);
+    b.push_back(6);
     try
     {
-        std::cout << "Longest Span is = " << a.longestSpan() << std::endl;
-        std::cout << "Shortest Span is = " << a.shortestSpan() << std::endl;
+        Span x(5);
+        x.addNumber(20);
+        x.addNumber(b.begin(), b.end());
+        std::cout << "Longest Span is = " << x.longestSpan() << std::endl;
+        std::cout << "Shortest Span is = " << x.shortestSpan() << std::endl;
+        x.printVec();
     }
     catch(const std::exception& e)
     {
         std::cerr << e.what() << '\n';
     }
-    
+
     /* Error Checking */
     std::cout << RED << "---------Error Checking---------" << RESET << std::endl;
 

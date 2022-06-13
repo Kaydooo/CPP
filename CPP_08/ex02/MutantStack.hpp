@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MutantStack.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mal-guna <mal-guna@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mal-guna <m3t9mm@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 04:38:52 by mal-guna          #+#    #+#             */
-/*   Updated: 2022/06/11 04:38:53 by mal-guna         ###   ########.fr       */
+/*   Updated: 2022/06/13 18:20:08 by mal-guna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class MutantStack : public std::stack<T>
         MutantStack<T>(): std::stack<T>(){}
         MutantStack(MutantStack &other){*this = other;}
     // ------------------------------ Destructor ------------------------------- //
-        ~MutantStack<T>(){};
+        virtual ~MutantStack<T>(){};
     // ------------------------------- Operators ------------------------------- //
     	MutantStack<T>	&operator=(MutantStack<T> const &rhs)
 		{

@@ -3,13 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mal-guna <mal-guna@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mal-guna <m3t9mm@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 04:39:06 by mal-guna          #+#    #+#             */
-/*   Updated: 2022/06/11 04:39:07 by mal-guna         ###   ########.fr       */
+/*   Updated: 2022/06/13 18:25:11 by mal-guna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 # include "Span.hpp"
 
@@ -51,7 +50,6 @@ void	Span::addNumber(std::vector<int>::iterator bg, std::vector<int>::iterator e
 
 void	Span::printVec() const
 {
-	
 	for(std::vector<int>::const_iterator it = intArray.begin(); it != intArray.end(); it++)
 		std::cout << *it << std::endl;
 }

@@ -9,4 +9,5 @@ int main()
 	hObject.complain("info");
 	hObject.complain("WrongLevel");
 	hObject.complain("DEBUG");
+	return (0);
 }

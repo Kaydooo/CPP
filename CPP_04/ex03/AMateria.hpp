@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mal-guna <mal-guna@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/24 20:26:17 by mal-guna          #+#    #+#             */
+/*   Updated: 2022/08/01 03:12:49 by mal-guna         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef AMATERIA_HPP
 # define AMATERIA_HPP
 
@@ -12,29 +24,30 @@ class ICharacter;
 
 class AMateria
 {
-public:
+	
+	public:
 
-// ----------------------------- Constructors ------------------------------ //
-	// AMateria();	// Default Constructor
-	//AMateria(const AMateria& c);	// Copy Constructor
-	AMateria(std::string const & type);
-	// AMateria(const AMateria& c);
-// ------------------------------ Destructor ------------------------------- //
-	virtual ~AMateria() = 0;	// Destructor
+	// ----------------------------- Constructors ------------------------------ //
+		// AMateria();	// Default Constructor
+		//AMateria(const AMateria& c);	// Copy Constructor
+		AMateria(std::string const & type);
+		// AMateria(const AMateria& c);
+	// ------------------------------ Destructor ------------------------------- //
+		virtual ~AMateria() = 0;	// Destructor
 
-// ------------------------------- Operators ------------------------------- //
-//	AMateria & operator=(const AMateria& a);
-	// Copy Assignement Operator
+	// ------------------------------- Operators ------------------------------- //
+	//	AMateria & operator=(const AMateria& a);
+		// Copy Assignement Operator
 
-// --------------------------- Getters && Setters -------------------------- //
-	std::string const & getType() const; //Returns the materia type
+	// --------------------------- Getters && Setters -------------------------- //
+		std::string const & getType() const; //Returns the materia type
 
-// --------------------------------- Methods ------------------------------- //
-	virtual AMateria* clone() const = 0;
-	virtual void use(ICharacter& target);
+	// --------------------------------- Methods ------------------------------- //
+		virtual AMateria* clone() const = 0;
+		virtual void use(ICharacter& target);
 
-protected:
-	std::string type;
+	protected:
+		std::string type;
 
 };
 

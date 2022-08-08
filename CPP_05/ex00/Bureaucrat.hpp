@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mal-guna <mal-guna@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/02 14:55:53 by mal-guna          #+#    #+#             */
+/*   Updated: 2022/08/01 03:15:30 by mal-guna         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
 
@@ -12,44 +24,43 @@
 
 class Bureaucrat
 {
-public:
-	
+	public:
+		
+	// ----------------------------- Constructors ------------------------------ //
+		Bureaucrat();	// Default Constructor
+		Bureaucrat(std::string, int);	// Fields Constructor
+		Bureaucrat(const Bureaucrat&);	// Copy Constructor
 
-// ----------------------------- Constructors ------------------------------ //
-	Bureaucrat();	// Default Constructor
-	Bureaucrat(std::string, int);	// Fields Constructor
-	Bureaucrat(const Bureaucrat&);	// Copy Constructor
+	// ------------------------------ Destructor ------------------------------- //
+		virtual ~Bureaucrat();	// Destructor
 
-// ------------------------------ Destructor ------------------------------- //
-	virtual ~Bureaucrat();	// Destructor
+	// ------------------------------- Operators ------------------------------- //
+		Bureaucrat & operator=(const Bureaucrat&);
+		// Copy Assignement Operator
 
-// ------------------------------- Operators ------------------------------- //
-	Bureaucrat & operator=(const Bureaucrat&);
-	// Copy Assignement Operator
+	// --------------------------- Getters && Setters -------------------------- //
+		std::string  const getName() const;
+		int		getGrade() const;
+		void	setName(std::string);
+		void	setGrade(int);
+		
+	// --------------------------------- Methods ------------------------------- //
 
-// --------------------------- Getters && Setters -------------------------- //
-	std::string  const getName() const;
-	int getGrade() const;
-	void setName(std::string);
-	void setGrade(int);
-	
-// --------------------------------- Methods ------------------------------- //
+		void	incGrade();
+		void	decGrade();
+	// --------------------------------- Exception class ------------------------------- //
+		class GradeTooHighException: public std::exception
+		{
+			const char* what() const throw();
+		};
+		class GradeTooLowException: public std::exception
+		{
+			const char* what() const throw();
+		};
 
-	void	incGrade();
-	void	decGrade();
-// --------------------------------- Exception class ------------------------------- //
-	class GradeTooHighException: public std::exception
-	{
-		const char* what() const throw();
-	};
-	class GradeTooLowException: public std::exception
-	{
-		const char* what() const throw();
-	};
-
-private:
-	std::string const name;
-	int		grade;
+	private:
+		std::string const name;
+		int		grade;
 
 };
 std::ostream & operator<<(std::ostream& lhs, const Bureaucrat& rhs);

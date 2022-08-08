@@ -78,33 +78,5 @@ int main()
         std::cout << "Catch 3 : " << e.what() <<  std::endl;
     }
 
-    /* Deep Copy Test */
-    std::cout << "Deep Copy Test" << std::endl;
-
-    Array<std::string> nameArray(5);
-    nameArray[0] = "Kaydoo";
-    nameArray[1] = "TawTaw";
-    nameArray[2] = "Omar";
-    nameArray[3] = "Matar";
-    nameArray[4] = "Anastasiia";
-    Array<std::string> anotherNameArray(nameArray);
-    for(unsigned int i = 0; i < 5; i++)
-    {
-        std::cout << "Name " << i + 1 << ": " << anotherNameArray[i] << std::endl;
-    }
-    std::cout << "size = " << anotherNameArray.size() << std::endl;
-
-    /* Assignment Operator, Same Object */
-
-    anotherNameArray = anotherNameArray;
-    for(unsigned int i = 0; i < 5; i++)
-    {
-        std::cout << "Name " << i + 1 << ": " << anotherNameArray[i] << std::endl;
-    }
-    std::cout << "size = " << anotherNameArray.size() << std::endl;
-    
-
-
-
     return 0;
 }

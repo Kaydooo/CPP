@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mal-guna <mal-guna@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/02 19:11:35 by mal-guna          #+#    #+#             */
+/*   Updated: 2022/08/01 03:20:12 by mal-guna         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef ROBOTOMYREQUESTFORM_HPP
 # define ROBOTOMYREQUESTFORM_HPP
 
@@ -17,29 +29,29 @@
 
 class RobotomyRequestForm : public Form
 {
-public:
+	public:
 
-// ----------------------------- Constructors ------------------------------ //
-	RobotomyRequestForm(std::string);	// Fields Constructor
-	RobotomyRequestForm(const RobotomyRequestForm&);	// Copy Constructor
+	// ----------------------------- Constructors ------------------------------ //
+		RobotomyRequestForm(std::string);	// Fields Constructor
+		RobotomyRequestForm(const RobotomyRequestForm&);	// Copy Constructor
 
-// ------------------------------ Destructor ------------------------------- //
-	virtual ~RobotomyRequestForm();	// Destructor 
+	// ------------------------------ Destructor ------------------------------- //
+		virtual ~RobotomyRequestForm();	// Destructor 
 
-// ------------------------------- Operators ------------------------------- //
-	RobotomyRequestForm & operator=(const RobotomyRequestForm&);
-	// Copy Assignement Operator
+	// ------------------------------- Operators ------------------------------- //
+		RobotomyRequestForm & operator=(const RobotomyRequestForm&);
+		// Copy Assignement Operator
 
-// --------------------------- Getters && Setters -------------------------- //
-	
-// --------------------------------- Methods ------------------------------- //
-void				execute(Bureaucrat const & executor) const;
+	// --------------------------- Getters && Setters -------------------------- //
+		
+	// --------------------------------- Methods ------------------------------- //
+	void				execute(Bureaucrat const & executor) const;
 
-// --------------------------------- Exception class ------------------------------- //
+	// --------------------------------- Exception class ------------------------------- //
 
-private:
-	std::string const	target;
-	RobotomyRequestForm();	// Default Constructor
+	private:
+		std::string const	target;
+		RobotomyRequestForm();	// Default Constructor
 
 };
 std::ostream & operator<<(std::ostream& lhs, RobotomyRequestForm const &rhs);

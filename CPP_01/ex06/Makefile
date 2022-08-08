@@ -15,7 +15,7 @@ NAME = harlFilter
 all : $(NAME)
 
 $(NAME): $(OBJS)
-	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
+	$(CXX) $(OBJS) -o $(NAME)
 
 clean:
 	$(RM) $(OBJS)

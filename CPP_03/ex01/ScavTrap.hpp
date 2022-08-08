@@ -6,7 +6,7 @@
 /*   By: mal-guna <mal-guna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 07:28:27 by mal-guna          #+#    #+#             */
-/*   Updated: 2022/05/17 23:56:36 by mal-guna         ###   ########.fr       */
+/*   Updated: 2022/07/31 23:59:12 by mal-guna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 #include "ClapTrap.hpp"
 
 class   ScavTrap : public ClapTrap {
-
-    private:
 
     public:
         ScavTrap();

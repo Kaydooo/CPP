@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mal-guna <m3t9mm@gmail.com>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/24 20:25:58 by mal-guna          #+#    #+#             */
+/*   Updated: 2022/05/24 20:25:59 by mal-guna         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Cat.hpp"
 #include "Dog.hpp"
 #include "WrongCat.hpp"
@@ -6,7 +18,15 @@ int main()
 {
 	Animal *animals[10];
 	Animal *dogggg = new Dog();
+	//Animal ani;
+	Animal *cat = new Cat();
 	dogggg->makeSound();
+	cat->makeSound();
+
+	Animal *test;
+	test = cat;
+	test->makeSound();
+
 	//Animal aanimal;
 	for(int i = 0; i < 10; i++)
 	{
@@ -24,6 +44,7 @@ int main()
 		delete animals[i];
 	}
 	delete dogggg;
+	delete cat;
 /* const Animal* meta = new Animal();
 const Animal* j = new Dog();
 Animal *cat = new Cat();

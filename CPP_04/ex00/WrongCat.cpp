@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mal-guna <m3t9mm@gmail.com>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/24 20:24:09 by mal-guna          #+#    #+#             */
+/*   Updated: 2022/05/24 20:24:10 by mal-guna         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "WrongCat.hpp"
 	
 // ----------------------------- Constructors ------------------------------ //
@@ -11,11 +23,6 @@ WrongCat::WrongCat(const WrongCat& c): WrongAnimal()
 {
 	Type = c.get_Type();
 	std::cout << GREEN << "Copy Constructor Called WrongCat()" << RESET << std::endl;
-}
-
-WrongCat::WrongCat(std::string in_Type): WrongAnimal(in_Type)
-{
-	std::cout << GREEN << "String Constructor Called WrongCat(std::string in_Type)" << RESET << std::endl;
 }
 
 // ------------------------------ Destructor ------------------------------- //

@@ -9,14 +9,14 @@ OBJS = ${SRCS:.cpp=.o}
 
 CXX = c++
 
-CXXFLAGS = -Werror -Wall -Wextra -I./includes -std=c++98
+CXXFLAGS = -Werror -Wall -Wextra -g3 -std=c++98
 
 NAME = ex02
 	
 all : $(NAME)
 
 $(NAME): $(OBJS)
-	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
+	$(CXX) $(OBJS) -o $(NAME)
 
 clean:
 	rm -rf $(OBJS)

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mal-guna <mal-guna@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/24 20:23:43 by mal-guna          #+#    #+#             */
+/*   Updated: 2022/08/01 03:10:44 by mal-guna         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef ANIMAL_HPP
 # define ANIMAL_HPP
 
@@ -11,30 +23,28 @@
 
 class Animal
 {
-public:
-// ----------------------------- Constructors ------------------------------ //
-	Animal();	// Default Constructor
-	Animal(std::string in_Type);	// Fields Constructor
-	Animal(const Animal& c);	// Copy Constructor
+	public:
+	// ----------------------------- Constructors ------------------------------ //
+		Animal();	// Default Constructor
+		Animal(const Animal& c);	// Copy Constructor
 
-// ------------------------------ Destructor ------------------------------- //
-	virtual ~Animal();	// Destructor
+	// ------------------------------ Destructor ------------------------------- //
+		virtual ~Animal();	// Destructor
 
-// ------------------------------- Operators ------------------------------- //
-	Animal & operator=(const Animal& a);
-	// Copy Assignement Operator
+	// ------------------------------- Operators ------------------------------- //
+		Animal & operator=(const Animal& a);
+		// Copy Assignement Operator
 
-// --------------------------- Getters && Setters -------------------------- //
-	std::string get_Type() const;
-	void set_Type(std::string input);
-	
+	// --------------------------- Getters && Setters -------------------------- //
+		std::string get_Type() const;
+		void set_Type(std::string input);
+		
 
-// --------------------------------- Methods ------------------------------- //
+	// --------------------------------- Methods ------------------------------- //
 
-	virtual void	makeSound() const;
-protected:
-	std::string Type;
-
+		virtual void	makeSound() const;
+	protected:
+		std::string Type;
 };
 
 #endif /* ANIMAL_HPP */

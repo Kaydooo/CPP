@@ -1,12 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   MateriaSource.cpp                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mal-guna <mal-guna@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/24 20:26:53 by mal-guna          #+#    #+#             */
+/*   Updated: 2022/08/01 03:14:50 by mal-guna         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "MateriaSource.hpp"
 
 // ----------------------------- Constructors ------------------------------ //
 MateriaSource::MateriaSource()
 {
 	for (int i = 0; i < 4; i++)
-	{
 		learned[i] = NULL;
-	}
+
 	std::cout << GREEN << "MateriaSource() Default Constructor Called" << RESET << std::endl;
 }
 

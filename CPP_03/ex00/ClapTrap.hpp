@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mal-guna <m3t9mm@gmail.com>                +#+  +:+       +#+        */
+/*   By: mal-guna <mal-guna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 14:50:01 by mal-guna          #+#    #+#             */
-/*   Updated: 2022/05/12 14:50:02 by mal-guna         ###   ########.fr       */
+/*   Updated: 2022/07/31 23:53:28 by mal-guna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,13 @@ class ClapTrap{
 		int			attackdamage;
 
 	public:
-	ClapTrap(void);
-	ClapTrap(std::string str);
-	ClapTrap(ClapTrap const &src);
-	ClapTrap &operator=(ClapTrap const &rhs);
-	~ClapTrap(void);
-
-	void attack(const std::string& target);
-	void takeDamage(unsigned int amount);
-	void beRepaired(unsigned int amount);
+		ClapTrap(void);
+		ClapTrap(std::string str);
+		ClapTrap(ClapTrap const &src);
+		ClapTrap &operator=(ClapTrap const &rhs);
+		~ClapTrap(void);
+		void attack(const std::string& target);
+		void takeDamage(unsigned int amount);
+		void beRepaired(unsigned int amount);
 };
 #endif

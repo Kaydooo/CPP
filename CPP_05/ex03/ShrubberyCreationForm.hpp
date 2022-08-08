@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mal-guna <mal-guna@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/02 19:11:49 by mal-guna          #+#    #+#             */
+/*   Updated: 2022/08/01 03:20:23 by mal-guna         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef SHRUBBERYCREATIONFORM_HPP
 # define SHRUBBERYCREATIONFORM_HPP
 
@@ -16,29 +28,29 @@
 
 class ShrubberyCreationForm : public Form
 {
-public:
+	public:
 
-// ----------------------------- Constructors ------------------------------ //
-	ShrubberyCreationForm(std::string);	// Fields Constructor
-	ShrubberyCreationForm(const ShrubberyCreationForm&);	// Copy Constructor
+	// ----------------------------- Constructors ------------------------------ //
+		ShrubberyCreationForm(std::string);	// Fields Constructor
+		ShrubberyCreationForm(const ShrubberyCreationForm&);	// Copy Constructor
 
-// ------------------------------ Destructor ------------------------------- //
-	virtual ~ShrubberyCreationForm();	// Destructor 
+	// ------------------------------ Destructor ------------------------------- //
+		virtual ~ShrubberyCreationForm();	// Destructor 
 
-// ------------------------------- Operators ------------------------------- //
-	ShrubberyCreationForm & operator=(const ShrubberyCreationForm&);
-	// Copy Assignement Operator
+	// ------------------------------- Operators ------------------------------- //
+		ShrubberyCreationForm & operator=(const ShrubberyCreationForm&);
+		// Copy Assignement Operator
 
-// --------------------------- Getters && Setters -------------------------- //
-	
-// --------------------------------- Methods ------------------------------- //
-void				execute(Bureaucrat const & executor) const;
+	// --------------------------- Getters && Setters -------------------------- //
+		
+	// --------------------------------- Methods ------------------------------- //
+	void				execute(Bureaucrat const & executor) const;
 
-// --------------------------------- Exception class ------------------------------- //
+	// --------------------------------- Exception class ------------------------------- //
 
-private:
-	std::string const	target;
-	ShrubberyCreationForm();	// Default Constructor
+	private:
+		std::string const	target;
+		ShrubberyCreationForm();	// Default Constructor
 
 };
 std::ostream & operator<<(std::ostream& lhs, ShrubberyCreationForm const &rhs);

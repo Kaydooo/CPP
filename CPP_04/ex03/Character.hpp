@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mal-guna <mal-guna@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/24 20:26:32 by mal-guna          #+#    #+#             */
+/*   Updated: 2022/08/01 03:13:38 by mal-guna         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CHARACTER_HPP
 # define CHARACTER_HPP
 # include "ICharacter.hpp"
@@ -10,34 +22,34 @@
 
 class Character : public ICharacter
 {
-public:
+	public:
 
-// ----------------------------- Constructors ------------------------------ //
-	Character();	// Default Constructor
-	Character(std::string name);	// Default Constructor
-	Character(const Character& c);	// Copy Constructor
+	// ----------------------------- Constructors ------------------------------ //
+		Character();	// Default Constructor
+		Character(std::string name);	// Default Constructor
+		Character(const Character& c);	// Copy Constructor
 
-// ------------------------------ Destructor ------------------------------- //
-	~Character();	// Destructor
+	// ------------------------------ Destructor ------------------------------- //
+		~Character();	// Destructor
 
-// ------------------------------- Operators ------------------------------- //
-	Character & operator=(const Character& a);
-	// Copy Assignement Operator
+	// ------------------------------- Operators ------------------------------- //
+		Character & operator=(const Character& a);
+		// Copy Assignement Operator
 
-// --------------------------- Getters && Setters -------------------------- //
-	std::string const & getName() const;
-	AMateria const		*getInv(int idx) const;
-	AMateria const		*getGnd(int idx) const;
+	// --------------------------- Getters && Setters -------------------------- //
+		std::string const & getName() const;
+		AMateria const		*getInv(int idx) const;
+		AMateria const		*getGnd(int idx) const;
 
-// --------------------------------- Methods ------------------------------- //
-	void equip(AMateria* m);
-	void unequip(int idx);
-	void use(int idx, ICharacter& target);
-private:
-	AMateria *inventory[4];
-	AMateria *ground[1000];
-	int count_ground;
-	std::string name;
+	// --------------------------------- Methods ------------------------------- //
+		void equip(AMateria* m);
+		void unequip(int idx);
+		void use(int idx, ICharacter& target);
+	private:
+		AMateria *inventory[4];
+		AMateria *ground[1000];
+		int count_ground;
+		std::string name;
 
 };
 

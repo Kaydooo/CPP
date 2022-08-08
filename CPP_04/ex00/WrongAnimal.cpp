@@ -1,5 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mal-guna <mal-guna@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/24 20:24:02 by mal-guna          #+#    #+#             */
+/*   Updated: 2022/08/01 03:12:11 by mal-guna         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "WrongAnimal.hpp"
 // ----------------------------- Constructors ------------------------------ //
+
 WrongAnimal::WrongAnimal()
 {
 	std::cout << GREEN << "Default Constructor Called WrongAnimal()" << RESET << std::endl;
@@ -12,12 +25,8 @@ WrongAnimal::WrongAnimal(const WrongAnimal& c)
 
 }
 
-WrongAnimal::WrongAnimal(std::string in_Type) : Type(in_Type)
-{
-	std::cout << GREEN << "String Constructor Called WrongAnimal(std::string in_Type)" << RESET << std::endl;
-}
-
 // ------------------------------ Destructor ------------------------------- //
+
 WrongAnimal::~WrongAnimal()
 {
 	std::cout << RED << "Destructor Called ~WrongAnimal()" << RESET << std::endl;
@@ -32,9 +41,10 @@ WrongAnimal & WrongAnimal::operator=(const WrongAnimal& c)
 }
 
 // --------------------------- Getters && Setters -------------------------- //
-std::string WrongAnimal::get_Type() const{ return Type; }
-void WrongAnimal::set_Type(std::string input){ Type = input; }
 
+std::string WrongAnimal::get_Type() const{ return Type; }
+
+void WrongAnimal::set_Type(std::string input){ Type = input; }
 
 
 // --------------------------------- Methods ------------------------------- //

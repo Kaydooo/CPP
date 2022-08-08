@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mal-guna <mal-guna@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/02 19:10:55 by mal-guna          #+#    #+#             */
+/*   Updated: 2022/08/01 03:19:41 by mal-guna         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef INTERN_HPP
 # define INTERN_HPP
 
@@ -15,36 +27,34 @@
 class Form;
 class Intern
 {
-public:
-	
-// ----------------------------- Constructors ------------------------------ //
-	Intern();	// Default Constructor
-	Intern(const Intern&);	// Copy Constructor
+	public:
+		
+	// ----------------------------- Constructors ------------------------------ //
+		Intern();	// Default Constructor
+		Intern(const Intern&);	// Copy Constructor
 
-// ------------------------------ Destructor ------------------------------- //
-	virtual ~Intern();	// Destructor
+	// ------------------------------ Destructor ------------------------------- //
+		virtual ~Intern();	// Destructor
 
-// ------------------------------- Operators ------------------------------- //
-	Intern & operator=(const Intern&);
-	// Copy Assignement Operator
+	// ------------------------------- Operators ------------------------------- //
+		Intern & operator=(const Intern&);
+		// Copy Assignement Operator
 
-// --------------------------- Getters && Setters -------------------------- //
-	
-// --------------------------------- Methods ------------------------------- //
-	Form*	makeForm(std::string, std::string);
-	Form*	makeS(std::string);
-	Form*	makeR(std::string);
-	Form*	makeP(std::string);
+	// --------------------------- Getters && Setters -------------------------- //
+		
+	// --------------------------------- Methods ------------------------------- //
+		Form*	makeForm(std::string, std::string);
+		Form*	makeS(std::string);
+		Form*	makeR(std::string);
+		Form*	makeP(std::string);
 
-// --------------------------------- Exception class ------------------------------- //
-class FormNotFoundException: public std::exception
-{
-	const char* what() const throw();
-};
+	// --------------------------------- Exception class ------------------------------- //
+	class FormNotFoundException: public std::exception
+	{
+		const char* what() const throw();
+	};
 
-
-	typedef Form *(Intern::*func)(std::string);
-private:
+		typedef Form *(Intern::*func)(std::string);
 
 };
 

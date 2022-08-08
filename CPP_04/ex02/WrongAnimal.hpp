@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mal-guna <m3t9mm@gmail.com>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/24 20:26:05 by mal-guna          #+#    #+#             */
+/*   Updated: 2022/05/24 20:26:06 by mal-guna         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef WRONGANIMAL_HPP
 # define WRONGANIMAL_HPP
 
@@ -16,7 +28,6 @@ public:
 
 // ----------------------------- Constructors ------------------------------ //
 	WrongAnimal();	// Default Constructor
-	WrongAnimal(std::string in_Type);	// Fields Constructor
 	WrongAnimal(const WrongAnimal& c);	// Copy Constructor
 
 // ------------------------------ Destructor ------------------------------- //

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mal-guna <mal-guna@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/02 19:09:58 by mal-guna          #+#    #+#             */
+/*   Updated: 2022/08/01 03:16:26 by mal-guna         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Bureaucrat.hpp"
 
 // ----------------------------- Constructors ------------------------------ //
@@ -47,6 +59,7 @@ std::ostream &operator<<(std::ostream& lhs, const Bureaucrat& rhs)
 
 // --------------------------- Getters && Setters -------------------------- //
 std::string const		Bureaucrat::getName() const{ return name; }
+
 int						Bureaucrat::getGrade() const{ return grade; }
 
 // --------------------------------- Methods ------------------------------- //
@@ -77,6 +90,6 @@ void	Bureaucrat::signForm(Form & f)
 	}
 	catch(Form::GradeTooLowException &e)
 	{
-		std::cout << *this << " couldn’t sign " << f << " because Bur grade was not high enough! " << std::endl;
+		std::cerr << *this << " couldn’t sign " << f << " because Bur grade was not high enough! " << std::endl;
 	}
 }

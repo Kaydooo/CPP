@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mal-guna <m3t9mm@gmail.com>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/24 20:25:05 by mal-guna          #+#    #+#             */
+/*   Updated: 2022/05/24 20:25:07 by mal-guna         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "WrongAnimal.hpp"
 // ----------------------------- Constructors ------------------------------ //
 WrongAnimal::WrongAnimal()
@@ -12,10 +24,6 @@ WrongAnimal::WrongAnimal(const WrongAnimal& c)
 
 }
 
-WrongAnimal::WrongAnimal(std::string in_Type) : Type(in_Type)
-{
-	std::cout << GREEN << "String Constructor Called WrongAnimal(std::string in_Type)" << RESET << std::endl;
-}
 
 // ------------------------------ Destructor ------------------------------- //
 WrongAnimal::~WrongAnimal()

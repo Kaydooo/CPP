@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Form.hpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mal-guna <mal-guna@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/02 19:10:04 by mal-guna          #+#    #+#             */
+/*   Updated: 2022/08/01 03:16:57 by mal-guna         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FORM_HPP
 # define FORM_HPP
 
@@ -17,45 +29,44 @@ class Bureaucrat;
 
 class Form
 {
-public:
+	public:
 
-// ----------------------------- Constructors ------------------------------ //
-	Form();	// Default Constructor
-	Form(std::string, int, int);	// Fields Constructor
-	Form(const Form&);	// Copy Constructor
+	// ----------------------------- Constructors ------------------------------ //
+		Form();	// Default Constructor
+		Form(std::string, int, int);	// Fields Constructor
+		Form(const Form&);	// Copy Constructor
 
-// ------------------------------ Destructor ------------------------------- //
-	virtual ~Form();	// Destructor 
+	// ------------------------------ Destructor ------------------------------- //
+		virtual ~Form();	// Destructor 
 
-// ------------------------------- Operators ------------------------------- //
-	Form & operator=(const Form&);
-	// Copy Assignement Operator
+	// ------------------------------- Operators ------------------------------- //
+		Form & operator=(const Form&);
+		// Copy Assignement Operator
 
-// --------------------------- Getters && Setters -------------------------- //
-	std::string  const	getName() const;
-	int					getSgrade() const;
-	int					getEgrade() const;
-	bool				getStatus() const;
-	
-// --------------------------------- Methods ------------------------------- //
-	void				beSigned(Bureaucrat&);
-	
-// --------------------------------- Exception class ------------------------------- //
-	class GradeTooHighException: public std::exception
-	{
-		const char* what() const throw();
-	};
-	class GradeTooLowException: public std::exception
-	{
-		const char* what() const throw();
-	};
+	// --------------------------- Getters && Setters -------------------------- //
+		std::string  const	getName() const;
+		int					getSgrade() const;
+		int					getEgrade() const;
+		bool				getStatus() const;
+		
+	// --------------------------------- Methods ------------------------------- //
+		void				beSigned(Bureaucrat&);
+		
+	// --------------------------------- Exception class ------------------------------- //
+		class GradeTooHighException: public std::exception
+		{
+			const char* what() const throw();
+		};
+		class GradeTooLowException: public std::exception
+		{
+			const char* what() const throw();
+		};
 
-private:
-	std::string const	name;
-	int		const		sign_grade;
-	int		const		exec_grade;
-	bool				status;
-
+	private:
+		std::string const	name;
+		int		const		sign_grade;
+		int		const		exec_grade;
+		bool				status;
 
 };
 std::ostream & operator<<(std::ostream& lhs, Form const &rhs);

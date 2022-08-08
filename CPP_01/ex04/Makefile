@@ -15,7 +15,7 @@ NAME = sed
 all : $(NAME)
 
 $(NAME): $(OBJS)
-	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
+	$(CXX) $(OBJS) -o $(NAME)
 
 clean:
 	rm -rf $(OBJS)

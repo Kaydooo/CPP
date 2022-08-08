@@ -6,7 +6,7 @@
 /*   By: mal-guna <mal-guna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 04:39:12 by mal-guna          #+#    #+#             */
-/*   Updated: 2022/06/11 04:39:13 by mal-guna         ###   ########.fr       */
+/*   Updated: 2022/06/14 09:03:40 by mal-guna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,30 @@
 
 int main() 
 {
+
+    /* SUBJECT */
+    std::cout << YELLOW << "SUBJET" << RESET << std::endl;
+    
+    Span sp = Span(5);
+    sp.addNumber(6);
+    sp.addNumber(3);
+    sp.addNumber(17);
+    sp.addNumber(9);
+    sp.addNumber(11);
+    std::cout << "SP: Shortest Span is "<< sp.shortestSpan() << std::endl;
+    std::cout << "SP: Longest Span is "<< sp.longestSpan() << std::endl;
+    
+    std::cout << YELLOW << "10000 Numbers" << RESET << std::endl;
+    
     Span a(10000);
     std::srand(time(0));
     for(int i = 0; i < 10000; i++)
         a.addNumber(rand() % 15);
+    std::cout << "A: Shortest Span is "<< a.shortestSpan() << std::endl;
+    std::cout << "A: Longest Span is "<< a.longestSpan() << std::endl;
+    
+    std::cout << YELLOW << "Improved addNumber()" << RESET << std::endl;
+
     std::vector<int> b;
     b.push_back(20);
     b.push_back(3);
@@ -28,11 +48,10 @@ int main()
     try
     {
         Span x(5);
-        x.addNumber(20);
+        x.addNumber(24);
         x.addNumber(b.begin(), b.end());
-        std::cout << "Longest Span is = " << x.longestSpan() << std::endl;
-        std::cout << "Shortest Span is = " << x.shortestSpan() << std::endl;
-        x.printVec();
+        std::cout << "X: Longest Span is = " << x.longestSpan() << std::endl;
+        std::cout << "X: Shortest Span is = " << x.shortestSpan() << std::endl;
     }
     catch(const std::exception& e)
     {
@@ -43,7 +62,7 @@ int main()
     std::cout << RED << "---------Error Checking---------" << RESET << std::endl;
 
     /* 1- Add Number When Full */
-    std::cout << CYAN << std::endl << "---------1- Add Number When Full---------" << RESET << std::endl;
+    std::cout << CYAN << std::endl << "1- Add Number When Full" << RESET << std::endl;
     try
     {
         Span c(2);
@@ -58,7 +77,7 @@ int main()
     }
 
     /* 2- Find  span for vector with elem <=1  */
-    std::cout << CYAN << std::endl << "---------2- Find Span When empty---------" << RESET << std::endl;
+    std::cout << CYAN << std::endl << "2- Find Span When empty" << RESET << std::endl;
     try
     {
         Span b(20);
@@ -70,6 +89,6 @@ int main()
     {
         std::cerr << e.what() << '\n';
     }
-
+    
     return 0;
 }

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mal-guna <mal-guna@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/24 20:24:07 by mal-guna          #+#    #+#             */
+/*   Updated: 2022/08/01 03:12:19 by mal-guna         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef WRONGANIMAL_HPP
 # define WRONGANIMAL_HPP
 
@@ -11,31 +23,30 @@
 
 class WrongAnimal
 {
-public:
-	
+	public:
+		
 
-// ----------------------------- Constructors ------------------------------ //
-	WrongAnimal();	// Default Constructor
-	WrongAnimal(std::string in_Type);	// Fields Constructor
-	WrongAnimal(const WrongAnimal& c);	// Copy Constructor
+	// ----------------------------- Constructors ------------------------------ //
+		WrongAnimal();	// Default Constructor
+		WrongAnimal(const WrongAnimal& c);	// Copy Constructor
 
-// ------------------------------ Destructor ------------------------------- //
-	virtual ~WrongAnimal();	// Destructor
+	// ------------------------------ Destructor ------------------------------- //
+		virtual ~WrongAnimal();	// Destructor
 
-// ------------------------------- Operators ------------------------------- //
-	WrongAnimal & operator=(const WrongAnimal& a);
-	// Copy Assignement Operator
+	// ------------------------------- Operators ------------------------------- //
+		WrongAnimal & operator=(const WrongAnimal& a);
+		// Copy Assignement Operator
 
-// --------------------------- Getters && Setters -------------------------- //
-	std::string get_Type() const;
-	void set_Type(std::string input);
-	
+	// --------------------------- Getters && Setters -------------------------- //
+		std::string get_Type() const;
+		void set_Type(std::string input);
+		
 
-// --------------------------------- Methods ------------------------------- //
+	// --------------------------------- Methods ------------------------------- //
 
-	void	makeSound() const;
-protected:
-	std::string Type;
+		void	makeSound() const;
+	protected:
+		std::string Type;
 
 };
 

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Intern.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mal-guna <mal-guna@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/02 19:10:52 by mal-guna          #+#    #+#             */
+/*   Updated: 2022/08/01 03:19:14 by mal-guna         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Intern.hpp"
 
 // ----------------------------- Constructors ------------------------------ //
@@ -31,8 +43,11 @@ Intern & Intern::operator=(const Intern& c)
 
 // --------------------------------- Methods ------------------------------- //
 const char*	   Intern::FormNotFoundException::what() const  throw() {return ("Form Not Found!");}
+
 Form*		Intern::makeS(std::string target){ return new ShrubberyCreationForm(target);}
+
 Form*		Intern::makeR(std::string target){ return new RobotomyRequestForm(target);}
+
 Form*		Intern::makeP(std::string target){ return new PresidentialPardonForm(target);}
 
 Form* 		Intern::makeForm(std::string n, std::string t)

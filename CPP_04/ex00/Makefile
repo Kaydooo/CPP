@@ -7,7 +7,7 @@ SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
-CXX = clang++
+CXX = c++
 
 CXXFLAGS = -Werror -Wall -Wextra -g3 -std=c++98
 
@@ -16,7 +16,7 @@ NAME = ex00
 all : $(NAME)
 
 $(NAME): $(OBJS)
-	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
+	$(CXX) $(OBJS) -o $(NAME)
 
 clean:
 	rm -rf $(OBJS)

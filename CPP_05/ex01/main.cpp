@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mal-guna <m3t9mm@gmail.com>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/02 19:10:06 by mal-guna          #+#    #+#             */
+/*   Updated: 2022/06/02 19:10:10 by mal-guna         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
 
@@ -22,9 +34,6 @@ int	main(void)
 	init_form("Form3", -1, 150);
 	init_form("Form5", -2, 155);
 
-
-
-	std::cout << "\n" << std::endl;
 	Bureaucrat	ber1 = Bureaucrat("employee", 100);
 	Bureaucrat	ber2 = Bureaucrat("President", 1);
 	Form	form1 = Form("low", 144, 120);
@@ -39,6 +48,4 @@ int	main(void)
 	ber2.signForm(form1);
 	ber2.signForm(form2);
 	ber2.signForm(form3);
-
-
 }

@@ -1,16 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Character.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mal-guna <mal-guna@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/24 20:26:26 by mal-guna          #+#    #+#             */
+/*   Updated: 2022/08/01 03:13:18 by mal-guna         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Character.hpp"
 
 // ----------------------------- Constructors ------------------------------ //
 Character::Character():count_ground(0), name("No Name")
 {
 	for (int i = 0; i < 4; i++)
-	{
 		inventory[i] = NULL;
-	}
 	for (int i = 0; i < 1000; i++)
-	{
 		ground[i] = NULL;
-	}
+
 	std::cout << GREEN << "Character() Default Constructor Called" << RESET << std::endl;
 
 }
@@ -24,15 +33,11 @@ Character::Character(const Character& c)
 Character::Character(std::string name):count_ground(0), name(name)
 {
 	for (int i = 0; i < 4; i++)
-	{
 		inventory[i] = NULL;
-	}
 	for (int i = 0; i < 1000; i++)
-	{
 		ground[i] = NULL;
-	}
-	std::cout << GREEN << "Character() String Constructor Called" << RESET << std::endl;
 
+	std::cout << GREEN << "Character() String Constructor Called" << RESET << std::endl;
 	this->name = name;
 }
 

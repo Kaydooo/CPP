@@ -60,10 +60,7 @@ class Array
 			return (*this);
 		}
 // --------------------------------- Methods ------------------------------- //
-		unsigned int	size() const
-		{
-			return (this->len);
-		}
+		unsigned int	size() const{return (this->len);}
 
 	private:
 		T				*elements;

@@ -6,7 +6,7 @@
 /*   By: mal-guna <m3t9mm@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 10:30:03 by mal-guna          #+#    #+#             */
-/*   Updated: 2022/05/19 10:30:08 by mal-guna         ###   ########.fr       */
+/*   Updated: 2022/05/24 11:01:16 by mal-guna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int main(void)
 	DefaultTank.takeDamage(30);
 	DefaultTank.beRepaired(10);
 	DefaultTank.attack("Dummy Tank");
+
+	
 	ScavTrap Tank2("Tank2");
 	Tank2.attack("Dummy Tank 2");
 	Tank2.takeDamage(9);

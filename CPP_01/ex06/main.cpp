@@ -9,7 +9,7 @@ int prnNext(std::string errorMsg)
 int main(int argc, char **argv)
 {
 	if (argc != 2)
-		return (prnNext("Wrong Number of Args"));
+		return (prnNext("Wrong Args"));
 	Harl hObject;
 	std::string levels[4] = {"debug", "info", "warning", "error"};
 	for (int i = 0 ; i < 4; i++)
@@ -26,8 +26,6 @@ int main(int argc, char **argv)
 		if(i == 3)
 			std::cout << "Level Was not found !" << std::endl;
 	}
-	
-
 	return (0);
 	
 

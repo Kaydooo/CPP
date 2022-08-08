@@ -36,7 +36,7 @@ void    callSound(Animal const &an)
 
 int main( void )
 {
-    std::string names[5] = {"Moatasem", "Mohamed", "JaJa", "Hus", "Khalid"};
+    std::string names[5] = {"Moatasem", "Mohamed", "A", "Hus", "Khalid"};
     iter<std::string> (names, 5, printElem);
 
     int numbers[6] = {1, 2, 3, 4, 5, 6};

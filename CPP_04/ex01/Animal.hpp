@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mal-guna <m3t9mm@gmail.com>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/24 20:24:35 by mal-guna          #+#    #+#             */
+/*   Updated: 2022/05/24 20:24:36 by mal-guna         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef ANIMAL_HPP
 # define ANIMAL_HPP
 
@@ -16,7 +28,6 @@ public:
 
 // ----------------------------- Constructors ------------------------------ //
 	Animal();	// Default Constructor
-	Animal(std::string in_Type);	// Fields Constructor
 	Animal(const Animal& c);	// Copy Constructor
 
 // ------------------------------ Destructor ------------------------------- //

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mal-guna <m3t9mm@gmail.com>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/24 20:23:46 by mal-guna          #+#    #+#             */
+/*   Updated: 2022/05/24 20:23:47 by mal-guna         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Cat.hpp"
 
 // ----------------------------- Constructors ------------------------------ //
@@ -7,16 +19,11 @@ Cat::Cat()
 	std::cout << GREEN << "Default Constructor Called Cat()" << RESET << std::endl;
 }
 
-Cat::Cat(const Cat& c)
+Cat::Cat(const Cat& c):Animal()
 {
 	Type = c.get_Type();
 	std::cout << GREEN << "Copy Constructor Called Cat()" << RESET << std::endl;
 
-}
-
-Cat::Cat(std::string in_Type): Animal(in_Type)
-{
-	std::cout << GREEN << "Field Constructor Called Cat()" << RESET << std::endl;
 }
 
 // ------------------------------ Destructor ------------------------------- //

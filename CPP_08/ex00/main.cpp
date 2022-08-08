@@ -6,7 +6,7 @@
 /*   By: mal-guna <mal-guna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 04:39:20 by mal-guna          #+#    #+#             */
-/*   Updated: 2022/06/11 04:39:21 by mal-guna         ###   ########.fr       */
+/*   Updated: 2022/06/14 06:44:38 by mal-guna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,22 +23,27 @@ int main()
         v1.push_back(i);
     for (int i = 1; i <= 5; i++)
         l1.push_back(i);
-    int num = 55;
+    int num = 4;
+    int num2 = 10;
     try
     {
+        std::cout << CYAN << "Vector : ";
         easyfind(v1, num);
+        std::cout << RESET;
     }
     catch (std::exception &e)
     {
-        std::cout << CYAN << "Vector : " << e.what() << RESET << std::endl;
+        std::cout << e.what() << RESET << std::endl;
     }
     try
     {
-        easyfind(l1, num);
+        std::cout << GREEN << "List : ";
+        easyfind(l1, num2);
+        std::cout << RESET;
     }
     catch (std::exception &e)
     {
-        std::cout << GREEN << "List : " << e.what() << RESET << std::endl;
+        std::cout << e.what() << RESET << std::endl;
     }
     
     return 0;

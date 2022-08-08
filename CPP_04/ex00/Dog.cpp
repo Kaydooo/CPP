@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mal-guna <m3t9mm@gmail.com>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/24 20:23:52 by mal-guna          #+#    #+#             */
+/*   Updated: 2022/05/24 20:23:54 by mal-guna         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Dog.hpp"
 
 // ----------------------------- Constructors ------------------------------ //
@@ -7,16 +19,12 @@ Dog::Dog()
 	std::cout << GREEN << "Default Constructor Called Dog()" << RESET << std::endl;
 }
 
-Dog::Dog(const Dog& c)
+Dog::Dog(const Dog& c): Animal()
 {
 	Type = c.get_Type();
 	std::cout << GREEN << "Copy Constructor Called Dog()" << RESET << std::endl;
 }
 
-Dog::Dog(std::string in_Type): Animal(in_Type)
-{
-	std::cout << GREEN << "Field Constructor Called Dog()" << RESET << std::endl;
-}
 
 // ------------------------------ Destructor ------------------------------- //
 Dog::~Dog()

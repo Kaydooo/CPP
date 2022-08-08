@@ -6,7 +6,7 @@
 /*   By: mal-guna <m3t9mm@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 04:38:52 by mal-guna          #+#    #+#             */
-/*   Updated: 2022/06/13 18:20:08 by mal-guna         ###   ########.fr       */
+/*   Updated: 2022/06/14 17:30:54 by mal-guna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class MutantStack : public std::stack<T>
         typedef typename std::stack<T>::container_type::iterator iterator;
     // ----------------------------- Constructors ------------------------------ //
         MutantStack<T>(): std::stack<T>(){}
-        MutantStack(MutantStack &other){*this = other;}
+        MutantStack<T>(MutantStack<T> const &other):std::stack<T>(other){*this = other;}
     // ------------------------------ Destructor ------------------------------- //
         virtual ~MutantStack<T>(){};
     // ------------------------------- Operators ------------------------------- //

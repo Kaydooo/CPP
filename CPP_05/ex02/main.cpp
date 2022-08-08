@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mal-guna <mal-guna@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/02 19:10:23 by mal-guna          #+#    #+#             */
+/*   Updated: 2022/08/01 03:17:59 by mal-guna         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
 #include "ShrubberyCreationForm.hpp"
@@ -10,14 +22,14 @@
 int	main(void)
 {
 	/* 
-		Error Check
+		Error Test
 	*/
 	
 	// Form	f;
 	// ShrubberyCreationForm s("FORM", 11, 22);
 	// s.getName();
 
-	/* Exceptions Check */
+	/* Exceptions Test */
 	ShrubberyCreationForm shrubbery("S1");
 	RobotomyRequestForm robotomy("R1");
 	PresidentialPardonForm presidential("P1");

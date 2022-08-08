@@ -1,22 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mal-guna <m3t9mm@gmail.com>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/24 20:23:40 by mal-guna          #+#    #+#             */
+/*   Updated: 2022/05/24 20:23:41 by mal-guna         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Animal.hpp"
 
 // ----------------------------- Constructors ------------------------------ //
 Animal::Animal()
 {
 	std::cout << GREEN << "Default Constructor Called Animal()" << RESET << std::endl;
-
-
 }
-
 Animal::Animal(const Animal& c)
 {
 	Type = c.get_Type();
 	std::cout << GREEN << "Copy Constructor Called Animal()" << RESET << std::endl;
-}
-
-Animal::Animal(std::string in_Type) : Type(in_Type)
-{
-	std::cout << GREEN << "String Constructor Called Animal(std::string in_Type)" << RESET << std::endl;
 }
 
 // ------------------------------ Destructor ------------------------------- //

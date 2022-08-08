@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mal-guna <m3t9mm@gmail.com>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/24 20:25:09 by mal-guna          #+#    #+#             */
+/*   Updated: 2022/05/24 20:25:10 by mal-guna         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Cat.hpp"
 #include "Dog.hpp"
 #include "WrongCat.hpp"
@@ -6,6 +18,9 @@ int main()
 {
 
 Animal *animals[10];
+Cat *testcat = new Cat();
+Cat *anothercat= new Cat();
+*testcat = *anothercat;
 for(int i = 0; i < 10; i++)
 {
 	if(i < 5)
@@ -21,6 +36,9 @@ for(int i = 0; i < 10; i++)
 {
 	delete animals[i];
 }
+delete testcat;
+delete anothercat;
+
 /* const Animal* meta = new Animal();
 const Animal* j = new Dog();
 Animal *cat = new Cat();

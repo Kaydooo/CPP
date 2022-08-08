@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mal-guna <mal-guna@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/02 19:10:18 by mal-guna          #+#    #+#             */
+/*   Updated: 2022/08/01 03:17:23 by mal-guna         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
 
@@ -13,45 +25,45 @@
 class Form;
 class Bureaucrat
 {
-public:
-	
-// ----------------------------- Constructors ------------------------------ //
-	Bureaucrat();	// Default Constructor
-	Bureaucrat(std::string, int);	// Fields Constructor
-	Bureaucrat(const Bureaucrat&);	// Copy Constructor
+	public:
+		
+	// ----------------------------- Constructors ------------------------------ //
+		Bureaucrat();	// Default Constructor
+		Bureaucrat(std::string, int);	// Fields Constructor
+		Bureaucrat(const Bureaucrat&);	// Copy Constructor
 
-// ------------------------------ Destructor ------------------------------- //
-	virtual ~Bureaucrat();	// Destructor
+	// ------------------------------ Destructor ------------------------------- //
+		virtual ~Bureaucrat();	// Destructor
 
-// ------------------------------- Operators ------------------------------- //
-	Bureaucrat & operator=(const Bureaucrat&);
-	// Copy Assignement Operator
+	// ------------------------------- Operators ------------------------------- //
+		Bureaucrat & operator=(const Bureaucrat&);
+		// Copy Assignement Operator
 
-// --------------------------- Getters && Setters -------------------------- //
-	std::string  const getName() const;
-	int getGrade() const;
-	void setName(std::string);
-	void setGrade(int);
-	
-// --------------------------------- Methods ------------------------------- //
+	// --------------------------- Getters && Setters -------------------------- //
+		std::string  const getName() const;
+		int getGrade() const;
+		void setName(std::string);
+		void setGrade(int);
+		
+	// --------------------------------- Methods ------------------------------- //
 
-	void	incGrade();
-	void	decGrade();
-	void	signForm(Form&);
-	void	executeForm(Form const &) const;
-// --------------------------------- Exception class ------------------------------- //
-	class GradeTooHighException: public std::exception
-	{
-		const char* what() const throw();
-	};
-	class GradeTooLowException: public std::exception
-	{
-		const char* what() const throw();
-	};
+		void	incGrade();
+		void	decGrade();
+		void	signForm(Form&);
+		void	executeForm(Form const &) const;
+	// --------------------------------- Exception class ------------------------------- //
+		class GradeTooHighException: public std::exception
+		{
+			const char* what() const throw();
+		};
+		class GradeTooLowException: public std::exception
+		{
+			const char* what() const throw();
+		};
 
-private:
-	std::string const name;
-	int		grade;
+	private:
+		std::string const name;
+		int		grade;
 
 };
 std::ostream & operator<<(std::ostream& lhs, const Bureaucrat& rhs);

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mal-guna <mal-guna@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/24 20:26:37 by mal-guna          #+#    #+#             */
+/*   Updated: 2022/08/01 03:13:57 by mal-guna         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CURE_HPP
 # define CURE_HPP
 
@@ -6,28 +18,27 @@
 
 class Cure: public AMateria
 {
-public:
-	
 
-// ----------------------------- Constructors ------------------------------ //
-	Cure();	// Default Constructor
-	Cure(const Cure& c);	// Copy Constructor
+	public:
+		
 
-// ------------------------------ Destructor ------------------------------- //
-	~Cure();	// Destructor
+	// ----------------------------- Constructors ------------------------------ //
+		Cure();	// Default Constructor
+		Cure(const Cure& c);	// Copy Constructor
 
-// ------------------------------- Operators ------------------------------- //
-	Cure & operator=(const Cure& a);
-	// Copy Assignement Operator
+	// ------------------------------ Destructor ------------------------------- //
+		~Cure();	// Destructor
 
-// --------------------------- Getters && Setters -------------------------- //
-	
+	// ------------------------------- Operators ------------------------------- //
+		Cure & operator=(const Cure& a);
+		// Copy Assignement Operator
 
-// --------------------------------- Methods ------------------------------- //
-	Cure* clone() const;
-	void use(ICharacter& target);
+	// --------------------------- Getters && Setters -------------------------- //
+		
 
-
+	// --------------------------------- Methods ------------------------------- //
+		Cure* clone() const;
+		void use(ICharacter& target);
 };
 
 #endif /* CURE_HPP */

@@ -6,7 +6,7 @@
 /*   By: mal-guna <mal-guna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 04:39:03 by mal-guna          #+#    #+#             */
-/*   Updated: 2022/06/11 04:39:04 by mal-guna         ###   ########.fr       */
+/*   Updated: 2022/08/06 04:38:36 by mal-guna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,45 +27,45 @@
 class Span
 {
 
-public:
-// ----------------------------- Constructors ------------------------------ //
-	Span(unsigned int);
-	Span(const Span &);
-// ------------------------------ Destructor ------------------------------- //
-	~Span(void);
-// ------------------------------- Operators ------------------------------- //
-Span	&operator=(Span);
-// --------------------------------- Methods ------------------------------- //
-	void	printVec(void) const;
-	void	addNumber(int);
-	void	addNumber(std::vector<int>::iterator, std::vector<int>::iterator);
-	int		max(void) const;
-	int		min(void) const;
-	int		longestSpan(void) const;
-	int		shortestSpan(void) const;
+	public:
+	// ----------------------------- Constructors ------------------------------ //
+		Span(unsigned int);
+		Span(const Span &);
+	// ------------------------------ Destructor ------------------------------- //
+		~Span(void);
+	// ------------------------------- Operators ------------------------------- //
+		Span	&operator=(Span);
+	// --------------------------------- Methods ------------------------------- //
+		void	addNumber(int);
+		void	addNumber(std::vector<int>::iterator, std::vector<int>::iterator);
+		int		max(void) const;
+		int		min(void) const;
+		int		longestSpan(void) const;
+		int		shortestSpan(void) const;
 
 
-// --------------------------- Getters && Setters -------------------------- //
-	std::vector<int> &getVec();
-	unsigned int	&getSize();
-// --------------------------------- Exception class ------------------------------- //
-	class NoEnoughSpaceInVector: public std::exception
-	{
-		const char* what() const throw();
-	};
+	// --------------------------- Getters && Setters -------------------------- //
+		std::vector<int> &getVec();
+		unsigned int	&getSize();
+	// --------------------------------- Exception class ------------------------------- //
+		class NoEnoughSpaceInVector: public std::exception
+		{
+			const char* what() const throw();
+		};
 
-	class NoSpanFoundException: public std::exception
-	{
-		const char* what() const throw();
-	};
+		class NoSpanFoundException: public std::exception
+		{
+			const char* what() const throw();
+		};
 
 
-private:
-	unsigned int N;
-	std::vector<int> intArray;
-	Span(void);
+	private:
+		unsigned int N;
+		std::vector<int> intArray;
+		Span(void);
 };
 void swap(Span& first, Span& second);
 
 
 #endif /* SPAN_HPP */
+

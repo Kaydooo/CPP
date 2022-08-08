@@ -14,7 +14,6 @@ class Fixed
 {
 
 	public:
-
 		Fixed();
 		Fixed(const int value);
 		Fixed(const float value);

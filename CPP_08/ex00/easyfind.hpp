@@ -6,7 +6,7 @@
 /*   By: mal-guna <mal-guna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 04:39:18 by mal-guna          #+#    #+#             */
-/*   Updated: 2022/06/11 04:39:19 by mal-guna         ###   ########.fr       */
+/*   Updated: 2022/06/14 06:28:47 by mal-guna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,9 @@ void	easyfind(T& a, int& b)
 	typename T::iterator it;
 	it = find (a.begin(), a.end(), b);
 	if (it != a.end())
-		std::cout << "Element found : " << *it << std::endl;
+		std::cout << "Element found --> " << *it << std::endl;
 	else
 		throw NumberNotFoundException();
-	
 }
-
 
 #endif /* EASYFIND_HPP */

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mal-guna <m3t9mm@gmail.com>                +#+  +:+       +#+        */
+/*   By: mal-guna <mal-guna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 07:28:25 by mal-guna          #+#    #+#             */
-/*   Updated: 2022/05/19 10:31:39 by mal-guna         ###   ########.fr       */
+/*   Updated: 2022/07/31 23:59:02 by mal-guna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@
 #define RESET "\033[0m"
 
 class   ScavTrap : virtual public ClapTrap {
-
-    private:
 
     public:
         ScavTrap();

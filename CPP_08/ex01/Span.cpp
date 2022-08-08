@@ -3,29 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mal-guna <m3t9mm@gmail.com>                +#+  +:+       +#+        */
+/*   By: mal-guna <mal-guna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 04:39:06 by mal-guna          #+#    #+#             */
-/*   Updated: 2022/06/13 18:25:11 by mal-guna         ###   ########.fr       */
+/*   Updated: 2022/06/14 09:00:52 by mal-guna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 # include "Span.hpp"
 
 // ----------------------------- Constructors ------------------------------ //
+Span::Span(void){}
 Span::Span(unsigned int size):N(size)
 {
 	this->intArray.reserve(N);
 }
 Span::Span(const Span &src): N(src.N)
 {
-	intArray.resize(N);
-	std::copy(src.intArray.begin(), src.intArray.end(), this->intArray.begin());
+	this->intArray = src.intArray;
 }
 // ------------------------------ Destructor ------------------------------- //
-Span::~Span()
-{
-}
+Span::~Span(){}
 // ------------------------------- Operators ------------------------------- //
 Span	&Span::operator=(Span rhs)
 {
@@ -46,12 +45,6 @@ void	Span::addNumber(std::vector<int>::iterator bg, std::vector<int>::iterator e
 		throw NoEnoughSpaceInVector();
 	for(std::vector<int>::iterator start = bg; start != en; start++)
 		intArray.push_back(*start);
-}
-
-void	Span::printVec() const
-{
-	for(std::vector<int>::const_iterator it = intArray.begin(); it != intArray.end(); it++)
-		std::cout << *it << std::endl;
 }
 
 int		Span::max() const{return(*(std::max_element(intArray.begin(), intArray.end())));}

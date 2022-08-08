@@ -3,24 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mal-guna <m3t9mm@gmail.com>                +#+  +:+       +#+        */
+/*   By: mal-guna <mal-guna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 09:28:37 by mal-guna          #+#    #+#             */
-/*   Updated: 2022/03/12 20:13:51 by mal-guna         ###   ########.fr       */
+/*   Updated: 2022/07/31 23:37:07 by mal-guna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
-Contact::Contact(void)
-{
-	return;
-}
+Contact::Contact(void) { return; }
 
-Contact::~Contact(void)
-{
-	return;
-}
+Contact::~Contact(void) { return; }
 
 void	Contact::set_info(std::string info[5])
 {

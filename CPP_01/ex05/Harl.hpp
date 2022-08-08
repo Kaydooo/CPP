@@ -9,17 +9,16 @@
 
 class Harl{
 
-public:
-	void complain( std::string level );
-	Harl(void);
-	~Harl(void);
-	typedef void (Harl::*functionPointer) (void);
-private:
-	void debug( void );
-	void info( void );
-	void warning( void );
-	void error( void );
-	void f(int b);
-
+	public:
+		void complain( std::string level );
+		Harl(void);
+		~Harl(void);
+		typedef void (Harl::*functionPointer) (void);
+	private:
+		void debug( void );
+		void info( void );
+		void warning( void );
+		void error( void );
+		void f(int b);
 };
 #endif

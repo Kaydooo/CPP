@@ -32,9 +32,6 @@ std::string parsefile(std::string filename, std::string s1, std::string s2)
 void	printToFile(std::string filename, std::string content)
 {
 	std::ofstream outfile((filename += ".replace").c_str());
-	//outfile.open(filename += ".replace");
-	//std::ofstream   outfile(std::string(filename));
-	//outfile.open(filename += ".replace");
 	outfile << content;
 	outfile.close();
 }

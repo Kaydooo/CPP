@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mal-guna <mal-guna@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/02 19:11:27 by mal-guna          #+#    #+#             */
+/*   Updated: 2022/08/01 03:19:58 by mal-guna         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PRESIDENTIALPARDONFORM_HPP
 # define PRESIDENTIALPARDONFORM_HPP
 
@@ -17,29 +29,29 @@
 
 class PresidentialPardonForm : public Form
 {
-public:
+	public:
 
-// ----------------------------- Constructors ------------------------------ //
-	PresidentialPardonForm(std::string);	// Fields Constructor
-	PresidentialPardonForm(const PresidentialPardonForm&);	// Copy Constructor
+	// ----------------------------- Constructors ------------------------------ //
+		PresidentialPardonForm(std::string);	// Fields Constructor
+		PresidentialPardonForm(const PresidentialPardonForm&);	// Copy Constructor
 
-// ------------------------------ Destructor ------------------------------- //
-	virtual ~PresidentialPardonForm();	// Destructor 
+	// ------------------------------ Destructor ------------------------------- //
+		virtual ~PresidentialPardonForm();	// Destructor 
 
-// ------------------------------- Operators ------------------------------- //
-	PresidentialPardonForm & operator=(const PresidentialPardonForm&);
-	// Copy Assignement Operator
+	// ------------------------------- Operators ------------------------------- //
+		PresidentialPardonForm & operator=(const PresidentialPardonForm&);
+		// Copy Assignement Operator
 
-// --------------------------- Getters && Setters -------------------------- //
-	
-// --------------------------------- Methods ------------------------------- //
-void				execute(Bureaucrat const & executor) const;
+	// --------------------------- Getters && Setters -------------------------- //
+		
+	// --------------------------------- Methods ------------------------------- //
+	void				execute(Bureaucrat const & executor) const;
 
-// --------------------------------- Exception class ------------------------------- //
+	// --------------------------------- Exception class ------------------------------- //
 
-private:
-	std::string const	target;
-	PresidentialPardonForm();	// Default Constructor
+	private:
+		std::string const	target;
+		PresidentialPardonForm();	// Default Constructor
 
 };
 std::ostream & operator<<(std::ostream& lhs, PresidentialPardonForm const &rhs);

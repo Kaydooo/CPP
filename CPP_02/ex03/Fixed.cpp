@@ -6,25 +6,25 @@
 
 Fixed::Fixed()
 {
-	//std::cout << "Default Constructor Called" << std::endl;
+	//std::cout << "Default Constructer Called" << std::endl;
 	value = 0;
 }
 
 Fixed::Fixed(const int int_value)
 {
-	//std::cout << "Int Constructor Called" << std::endl;
+	//std::cout << "Int Constructer Called" << std::endl;
 	value = int_value << bits;
 }
 Fixed::Fixed(const float float_value)
 {
-	//std::cout << "Float Constructor Called" << std::endl;
+	//std::cout << "Float Constructer Called" << std::endl;
 	value = roundf(float_value * (1 << bits));
 }
 
 
 Fixed::Fixed( const Fixed & src )
 {
-	//std::cout << "P_Constructor Called" << std::endl;
+	//std::cout << "P_Constructer Called" << std::endl;
 	*this = src;
 }
 
@@ -45,9 +45,7 @@ Fixed &Fixed::operator=( Fixed const & rhs )
 {
 	//std::cout << "Operator= Overload Called" << std::endl;
 	if ( this != &rhs )
-	{
 		this->value = rhs.getRawBits();
-	}
 	return *this;
 }
 
@@ -176,15 +174,12 @@ Fixed  &Fixed::max(Fixed  &lhs, Fixed  &rhs)
 	return rhs;
 }
 
-
-
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
 
 int		Fixed::getRawBits(void) const
 {
-	//std::cout << "getRawBits Called" << std::endl;
 	return this->value;
 }
 

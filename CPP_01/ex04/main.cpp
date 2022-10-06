@@ -2,8 +2,7 @@
 #include<fstream>
 #include<sstream>
 #include<string>
-
-std::string replaceContent(std::string &content, std::string s1, std::string s2)
+void replaceContent(std::string &content, std::string s1, std::string s2)
 {
 	int index;
 	int current_index = 0;
@@ -17,8 +16,6 @@ std::string replaceContent(std::string &content, std::string s1, std::string s2)
 			content.insert(index, s2);
 		}
 	}
-	return (content);
-
 }
 
 std::string parsefile(std::string filename)

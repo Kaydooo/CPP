@@ -6,16 +6,15 @@
 
 void replaceContent(std::string &content, std::string s1, std::string s2)
 {
-	int index;
-	int current_index = 0;
+	int index = 0;
 
 	if(s1.compare(s2))
 	{
-		while((index = content.find(s1, current_index)) != -1)
+		while((index = content.find(s1, index)) != -1)
 		{
-			current_index = index + s2.length();			
 			content.erase(index, s1.size());
 			content.insert(index, s2);
+			index = index + s2.length();
 		}
 	}
 }

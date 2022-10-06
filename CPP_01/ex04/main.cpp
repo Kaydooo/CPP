@@ -22,7 +22,6 @@ void replaceContent(std::string &content, std::string s1, std::string s2)
 
 std::string parseFile(std::string filename)
 {
-
 	std::ifstream infile;
 	std::string line;
 	std::string content;

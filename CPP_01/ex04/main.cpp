@@ -3,7 +3,7 @@
 #include<sstream>
 #include<string>
 
-std::string replaceContent(std::string content, std::string s1, std::string s2)
+std::string replaceContent(std::string &content, std::string s1, std::string s2)
 {
 	int index;
 	int current_index = 0;
@@ -66,7 +66,7 @@ int main(int argc, char **argv)
 		return(prnNext("Wrong Args !!"));
 
 	std::string content = parsefile(filename);
-	content  = replaceContent(content, s1, s2);
+	replaceContent(content, s1, s2);
 	printToFile(filename, content);
 
 	return (0);

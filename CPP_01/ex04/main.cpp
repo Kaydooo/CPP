@@ -35,9 +35,13 @@ std::string parseFile(std::string filename)
 	}
 
 	std::ostringstream ss;
-	ss << infile.rdbuf();
-	content = ss.str();
+	if(!(ss << infile.rdbuf()))
+	{
+		std::cout << "Reading faild, could be a directory" << std::endl;
+		exit(EXIT_FAILURE);
+	}
 
+	content = ss.str();
 	infile.close();
 	
 	return (content);
